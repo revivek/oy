@@ -41,7 +41,7 @@ export default {
     const newProps = (
       this.rules
         .filter((rule) => {
-          const ruleIsBroken = !rule.validate(this.props);
+          const ruleIsBroken = rule.validate(this.props) === false;
           const warn = rule.warn || defaultWarn;
           if (ruleIsBroken) {
             warn(rule, this.constructor.displayName);

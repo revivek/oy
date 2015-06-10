@@ -49,7 +49,7 @@ export default React.createClass({
   ],
 
   // OyMixin defines `render` which wraps `element`.
-  element: 'table'
+  element: 'img'
 });
 ```
 
@@ -78,9 +78,6 @@ import express from 'express';
 
 // React only writes HTML5 and certain SVG attributes, so we need to transform the attributes before serving.
 import Oy from 'oy';
-
-// Provides a head. Can replace with your own.
-import HTMLTemplate from 'oy/utils/HTMLTemplate';
 
 var server = express();
 server.set('port', (process.env.PORT || 8887));

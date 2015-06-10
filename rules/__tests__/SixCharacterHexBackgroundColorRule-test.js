@@ -36,7 +36,7 @@ describe('SixCharacterHexBackgroundColorRule', function() {
 
   it('should validate', function() {
     const result1 = SixCharacterHexBackgroundColorRule.validate({});
-    assert.equal(result1, true);
+    assert.equal(result1, undefined);
 
     const result2 = SixCharacterHexBackgroundColorRule.validate({bgColor: '#fff'});
     assert.equal(result2, false);
