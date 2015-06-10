@@ -1,5 +1,5 @@
 import assert from 'assert';
-import React from 'react';
+import React from 'react/addons';
 
 import OyMixin from '../OyMixin';
 
@@ -69,19 +69,32 @@ describe('OyMixin', function() {
   });
 
   it('should run validate then autocorrect', function() {
-    var hasValidated = false;
+    let hasValidated = false;
+    let correctOrder = false;
 
-    const A = React.createClass({
-      mixins: [OyMixin],
+    const Rule1 = {
+      name: 'Rule1',
+      description: 'foo',
       validate: () => {
         hasValidated = true;
         return true;
       },
       autocorrect: (props) => {
+        if (hasValidated) {
+          correctOrder = true;
+        }
         return props;
       }
+    };
+
+    const A = React.createClass({
+      mixins: [OyMixin],
+      element: 'table',
+      rules: [Rule1]
     });
 
+    React.renderToStaticMarkup(React.createElement(A), null);
+    assert.equal(correctOrder, true); 
   });
 
   it('should return new, unchanged props on autocorrection', function() {

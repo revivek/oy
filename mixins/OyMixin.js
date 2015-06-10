@@ -5,6 +5,8 @@
 
 import assign from 'object-assign';
 
+import OyComponents from '../utils/OyComponents';
+
 
 const defaultWarn = (brokenRule, componentName) => {
   console.warn(`Validation failed in <${componentName} />: ${brokenRule.description}`);
@@ -49,6 +51,7 @@ export default {
         .reduce((props, brokenRule) => brokenRule.autocorrect(props), assign({}, this.props))
     );
 
-    return React.createElement(this.element, newProps, this.props.children);
+    const element = OyComponents.hasOwnProperty(this.element) ? OyComponents[this.element] : this.element;
+    return React.createElement(element, newProps, this.props.children);
   }
 };

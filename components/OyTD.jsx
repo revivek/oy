@@ -24,5 +24,3 @@ export default React.createClass({
   }
 });
 
-
-// props => validatedProps => autocorrectedProps => oyProps

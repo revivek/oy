@@ -1,9 +1,9 @@
 /**
- * SixCharacterHexColorRule
+ * SixCharacterHexBackgroundColorRule
  */
 
 export default {
-  name: 'SixCharacterHexColorRule',
+  name: 'SixCharacterHexBackgroundColorRule',
   description: 'Many email clients only support 6-character hex strings on the `bgcolor` attribute. See https://litmus.com/community/learning/21-background-colors-in-html-email',
 
   validate: function(props) {
@@ -18,9 +18,8 @@ export default {
         props.bgColor[2] + props.bgColor[2] +
         props.bgColor[3] + props.bgColor[3]
       );
-      return props;
     }
-    // Cannot autocorrect.
+    return props;
   }
 };
 
