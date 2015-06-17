@@ -3,10 +3,19 @@
  * Runs rules and may autocorrect mistakes.
  */
 
+import React from 'react';
 import assign from 'object-assign';
 
-import OyComponents from '../utils/OyComponents';
+import OyImg from '../components/OyImg.jsx';
+import OyTable from '../components/OyTable.jsx';
+import OyTD from '../components/OyTD.jsx';
 
+
+const OY_COMPONENTS = {
+  'img': OyImg,
+  'table': OyTable,
+  'td': OyTD
+};
 
 const defaultWarn = (brokenRule, componentName) => {
   console.warn(`Validation failed in <${componentName} />: ${brokenRule.description}`);
@@ -51,7 +60,7 @@ export default {
         .reduce((props, brokenRule) => brokenRule.autocorrect(props), assign({}, this.props))
     );
 
-    const element = OyComponents.hasOwnProperty(this.element) ? OyComponents[this.element] : this.element;
+    const element = OY_COMPONENTS.hasOwnProperty(this.element) ? OY_COMPONENTS[this.element] : this.element;
     return React.createElement(element, newProps, this.props.children);
   }
 };
