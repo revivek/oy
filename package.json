@@ -13,6 +13,7 @@
     "mocha": "^2.2.5"
   },
   "scripts": {
+    "compile": "babel -d lib/ src/",
     "test": "mocha --recursive --compilers jsx:babel/register src/**/__tests__"
   }
 }
