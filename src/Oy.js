@@ -10,7 +10,6 @@
 import HTML4 from './utils/HTML4';
 
 import OyMixin from './OyMixin';
-import OyRules from './OyRules';
 
 
 export default {
