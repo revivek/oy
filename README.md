@@ -109,3 +109,4 @@ server.listen(server.get('port'), () => {
 - [ ] Bring HTML4 transformation into `Oy.renderTemplate`
 - [ ] Consider post-`render` rule validation.
 - [ ] Custom logging during warning.
+- [ ] Ability to provide a default base template.

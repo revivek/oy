@@ -1,16 +1,25 @@
 /**
  * Oy:
- * Exposes `renderTemplate` functionality.
+ * Exposes `renderTemplate` functionality, along with `Mixin` and `rule`.
  * A base template to build emails with.
  *
  * Based on guidelines here:
  * https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/blob/master/htmlemail-boilerplate-stable-with-guidelines.html
  */
 
-import HTML4 from './HTML4';
+import HTML4 from './utils/HTML4';
+
+import OyMixin from './OyMixin';
+import OyRules from './OyRules';
 
 
 export default {
+  Mixin: OyMixin,
+
+  rule: (ruleName) => {
+    return require(`./rules/${ruleName}`);
+  },
+
   renderTemplate: (options) => {
     [
       'title',
