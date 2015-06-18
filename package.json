@@ -13,6 +13,6 @@
     "mocha": "^2.2.5"
   },
   "scripts": {
-    "test": "mocha --recursive --compilers jsx:babel/register ./**/__tests__"
+    "test": "mocha --recursive --compilers jsx:babel/register src/**/__tests__"
   }
 }

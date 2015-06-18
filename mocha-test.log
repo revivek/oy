@@ -1,19 +1,0 @@
-
-
-  OyMixin
-    ✓ should throw errors on improper component configuration
-    ✓ should run validate then autocorrect
-
-  SixCharacterHexBackgroundColorRule
-    ✓ should define necessary properties
-    ✓ should validate
-    ✓ should autocorrect when possible
-
-  TableBorderCellPaddingCellSpacingRule
-    ✓ should define necessary properties
-    ✓ should validate
-    ✓ should autocorrect when possible
-
-
-  8 passing (62ms)
-
