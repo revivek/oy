@@ -3,7 +3,7 @@
   "description": "React components for building emails.",
   "version": "0.0.1",
   "private": true,
-  "main": "lib/utils/Oy.js",
+  "main": "lib/Oy.js",
   "dependencies": {
     "babel": "^5.5.6",
     "object-assign": "^3.0.0",
