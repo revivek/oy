@@ -106,6 +106,6 @@ server.listen(server.get('port'), () => {
 
 ### TODO
 
-- [ ] Might want to not have `oyRender`, and provide a more restricted `oyComponent: 'OyFoo'` workflow.
-- [x] OyMixin should have a default `notify` implementation.
 - [ ] Bring HTML4 transformation into `Oy.renderTemplate`
+- [ ] Consider post-`render` rule validation.
+- [ ] Custom logging during warning.

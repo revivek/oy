@@ -11,6 +11,8 @@ import OyTable from '../components/OyTable.jsx';
 import OyTD from '../components/OyTD.jsx';
 
 
+// HTML4 elements with attributes deprecated in HTML5.
+// Necessary for now because React does not render custom attributes.
 const OY_COMPONENTS = {
   'img': OyImg,
   'table': OyTable,

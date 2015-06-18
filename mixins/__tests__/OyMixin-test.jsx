@@ -1,5 +1,5 @@
 import assert from 'assert';
-import React from 'react/addons';
+import React from 'react';
 
 import OyMixin from '../OyMixin';
 
@@ -8,7 +8,6 @@ describe('OyMixin', function() {
   it('should throw errors on improper component configuration', function() {
     const NoRules = React.createClass({
       mixins: [OyMixin],
-      rules: [],
       element: 'table'
     });
     assert.throws(() => React.renderToStaticMarkup(<NoRules />), Error);
@@ -77,7 +76,7 @@ describe('OyMixin', function() {
       description: 'foo',
       validate: () => {
         hasValidated = true;
-        return true;
+        return false;
       },
       autocorrect: (props) => {
         if (hasValidated) {
@@ -93,15 +92,7 @@ describe('OyMixin', function() {
       rules: [Rule1]
     });
 
-    React.renderToStaticMarkup(React.createElement(A), null);
+    React.renderToStaticMarkup(<A />);
     assert.equal(correctOrder, true); 
-  });
-
-  it('should return new, unchanged props on autocorrection', function() {
-
-  });
-
-  it('should return new, changed props on autocorrection', function() {
-
   });
 });
