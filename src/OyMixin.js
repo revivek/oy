@@ -6,9 +6,9 @@
 import React from 'react';
 import assign from 'object-assign';
 
-import OyImg from './components/OyImg.jsx';
-import OyTable from './components/OyTable.jsx';
-import OyTD from './components/OyTD.jsx';
+import OyImg from './components/OyImg';
+import OyTable from './components/OyTable';
+import OyTD from './components/OyTD';
 
 
 // HTML4 elements with attributes deprecated in HTML5.
