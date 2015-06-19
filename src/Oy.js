@@ -9,14 +9,20 @@
 
 import HTML4 from './utils/HTML4';
 
-import OyMixin from './OyMixin';
+import OyElement from './components/OyElement';
 
 
 export default {
-  Mixin: OyMixin,
+  Element: OyElement,
 
-  rule: (ruleName) => {
-    return require(`./rules/${ruleName}`);
+  PropTypes: {
+    rules: (ruleNames) => {
+      return (props, propName, componentName) => {
+        ruleNames.forEach((ruleName) => {
+          require(`./rules/${ruleName}`)(props, propName, componentName);
+        });
+      };
+    }
   },
 
   renderTemplate: (options) => {
