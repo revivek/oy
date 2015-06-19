@@ -5,7 +5,7 @@ import Oy from '../Oy';
 
 
 describe('Oy', function() {
-  it('expose Mixin, which implements certain methods', function() {
+  it('expose PropTypes, Element, and renderTemplate', function() {
     assert.notEqual(Oy.PropTypes, undefined);
     assert.notEqual(Oy.PropTypes.rules, undefined);
     assert.notEqual(Oy.Element, undefined);

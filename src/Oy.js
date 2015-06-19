@@ -18,8 +18,8 @@ export default {
   PropTypes: {
     rules: (ruleNames) => {
       return (props, propName, componentName) => {
-        ruleNames.forEach((ruleName) => {
-          require(`./rules/${ruleName}`)(props, propName, componentName);
+        return ruleNames.find((ruleName) => {
+          return require(`./rules/${ruleName}`)(props, propName, componentName) instanceof Error;
         });
       };
     }
