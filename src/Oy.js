@@ -18,9 +18,10 @@ export default {
   PropTypes: {
     rules: (ruleNames) => {
       return (props, propName, componentName) => {
-        return ruleNames.find((ruleName) => {
-          return require(`./rules/${ruleName}`)(props, propName, componentName) instanceof Error;
-        });
+        return ruleNames
+          .map((ruleName) => require(`./rules/${ruleName}`)(props, propName, componentName))
+          .filter((error) => error instanceof Error)
+          [0];
       };
     }
   },
