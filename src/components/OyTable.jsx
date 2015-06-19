@@ -5,7 +5,7 @@ export default React.createClass({
   displayName: 'OyTable',
 
   propTypes: {
-    align: React.PropTypes.string.isRequired,
+    align: React.PropTypes.string,
     vAlign: React.PropTypes.string,
     bgColor: React.PropTypes.string
   },
