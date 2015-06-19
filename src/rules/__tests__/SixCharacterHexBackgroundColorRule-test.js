@@ -6,7 +6,7 @@ import rule from '../SixCharacterHexBackgroundColorRule';
 describe('SixCharacterHexBackgroundColorRule', function() {
   it('should validate', function() {
     const result1 = rule({}, 'bgColor');
-    assert.equal(result1 instanceof Error, true);
+    assert.equal(result1 instanceof Error, false);
 
     const result2 = rule({bgColor: '#fff'}, 'bgColor');
     assert.equal(result2 instanceof Error, true);
