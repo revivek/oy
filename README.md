@@ -2,100 +2,132 @@
 
 *Emails, oy vey!*
 
-React components and utilities for server-side HTML email template construction.
+React components and utilities for server-side HTML email template construction. Oy provides utilities to:
+
+- Move backwards in time to render HTML4, since React only supports HTML5.
+- Validate and potentially autocorrect attributes based on best-practices.
+- Render your templates server-side.
+
+[Blogpost](#TODO)
 
 ## Installation
 
 ```
-npm install --save-dev oy
+npm install --save oy
 ```
 
 ## Architecture
 
-Oy is a layer of abstraction in between React and your own components. It provides a React
-mixin that reads developer-defined rules (we provide many best-practices already), then 
-validates, notifies, and autocorrects against those rules.
+Oy provides the tools necessary to fill the gaps that React can’t 
+(and probably shouldn’t) to help us render email templates on the server.
 
 #### TODO: Picture
 
 ## Example usage
 
-1. Components to build emails
-2. Rules for validation and autocorrection
-3. Utilities for server-side rendering
+### 1. Custom Oy components
 
-### 1. Components to build emails
-
-```
-// MyImg
+```js
+// MyTable
 
 import React from 'react';
-
-import {Rule1, Rule2, Rule3} from './Rules';
-
-import OyRulesMixin from 'oy/mixins/OyRulesMixin';
-
-import OyImg from 'oy/components/OyImg.jsx';
+import Oy from 'oy';
 
 
 export default React.createClass({
-  mixins: [OyMixin],
+  displayName: 'MyTable',
 
-  // Rules to validate and autocorrect against
-  rules: [
-    Rule1,
-    Rule2,
-    Rule3
-  ],
+  propTypes: {
+    bgColor: Oy.PropTypes.rules(['SixCharacterHexBackgroundColorRule']),
+    border: Oy.PropTypes.rules(['TableBorderRule']),
+    cellPadding: Oy.PropTypes.rules(['TableCellPaddingRule']),
+    cellSpacing: Oy.PropTypes.rules(['TableCellSpacingRule'])
+  },
 
-  // OyMixin defines `render` which wraps `element`.
-  element: 'img'
+  render: function() {
+    return <Oy.Element type="table" {...this.props} />;
+  }
 });
 ```
 
-### 2. Rules for validation and autocorrection
 
-```
-// Rule1
+### 2. Modules
 
-export default {
-  name: 'Rule1',
-  description: 'Force dark grey background color. See www.example.com',
-  validate: (props) => false,
-  autocorrect: (props) => {
-    props.bgColor = '#42444c';
-    return props;
+```js
+import React from 'react';
+
+import MyTable from './my/MyTable.jsx';
+import MyTD from './my/MyTD.jsx';
+import MyTR from './my/MyTR.jsx';
+
+
+export default React.createClass({
+  displayName: 'BodyText',
+
+  propTypes: {
+    maxWidth: React.PropTypes.string.isRequired
+  },
+
+  render: function() {
+    return (
+      <MyTable width={this.props.maxWidth}>
+        <MyTR>
+          <MyTD align="center">
+            {this.props.children}
+          </MyTD>
+        </MyTR>
+      </MyTable>
+    );
   }
-};
+});
 ```
 
-### 3. Utilities for server-side rendering
+### 3. Template
+
+```js
+import React from 'react';
+
+import OyLayout from './layout/OyLayout.jsx';
+
+import BodyText from './modules/BodyText.jsx';
+
+
+export default React.createClass({
+  displayName: 'OyGettingStartedEmail',
+
+  render: function() {
+    return (
+      <OyLayout>
+        <BodyText>Welcome to Oy!</BodyText>
+      </OyLayout>
+    );
+  }
+});
+```
+
+
+### 4. Server
 
 Using Express.js:
 
-```
+```js
 import express from 'express';
-
-// React only writes HTML5 and certain SVG attributes, so we need to transform the attributes before serving.
+import React from 'react';
 import Oy from 'oy';
+
+import OyGettingStartedEmail from './templates/OyGettingStartedEmail.jsx';
+
 
 var server = express();
 server.set('port', (process.env.PORT || 8887));
 
-server.get('/email/:emailName', (req, res) => {
-  const emailName = req.params.emailName;
-  const EmailRegistry = require('./apps/EmailRegistry');
-  const Email = EmailRegistry[emailName];
-  if (!Email) {
-    res.send(`Email with name ${emailName} not found`);
-  } else {
-    const template = Oy.renderTemplate({
-      title: 'Oyster',
-      headCSS: headCSS,
-      bodyContent: React.renderToStaticMarkup(email)
-    });
-    res.send(template);
-  }
+server.get('/email/oy', (req, res) => {
+  const template = Oy.renderTemplate({
+    title: 'Oyster',
+    headCSS: '@media ...',
+    bodyContent: React.renderToStaticMarkup(<OyGettingStartedEmail />)
+  });
+  res.send(template);
 });
 
 server.listen(server.get('port'), () => {
@@ -104,7 +136,13 @@ server.listen(server.get('port'), () => {
 ```
 
 
-### TODO
+## Testing
 
-- [ ] Consider post-`render` rule validation.
-- [ ] Ability to provide a default base template.
+```
+npm test
+```
+
+## Contributing
+
+We welcome contributions. If there's some information missing or ideas for how to make Oy better, please
+send a pull request, file an issue, or email [vivek@oysterbooks.com](mailto:vivek@oysterbooks.com)
