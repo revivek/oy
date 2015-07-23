@@ -19,7 +19,13 @@ export default {
     rules: (ruleNames) => {
       return (props, propName, componentName) => {
         return ruleNames
-          .map((ruleName) => require(`./rules/${ruleName}`)(props, propName, componentName))
+          .map((ruleName) => {
+            if (typeof ruleName === 'string' || ruleName instanceof String) {
+              return require(`./rules/${ruleName}`)(props, propName, componentName);
+            } else {
+              return ruleName;
+            }
+          })
           .filter((error) => error instanceof Error)
           [0];
       };
