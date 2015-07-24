@@ -5,7 +5,7 @@
 React components and utilities for server-side HTML email template construction. Oy provides utilities to:
 
 - Move backwards in time to render HTML4, since React only supports HTML5.
-- Validate and potentially autocorrect attributes based on best-practices.
+- Validate attributes based on best-practices.
 - Render your templates server-side.
 
 [Blogpost](#TODO)
