@@ -44,9 +44,9 @@ export default {
     });
 
     const title = options.title;
-    const bodyContent = options.bodyContent || '';
+    const bodyContent = options.bodyContent;
+    const previewText = options.previewText;
     const headCSS = options.headCSS || '';
-    const previewText = options.previewText || '';
 
     const rawHTML = `
       <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
