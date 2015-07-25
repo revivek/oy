@@ -145,4 +145,6 @@ npm test
 ## Contributing
 
 We welcome contributions. If there's some information missing or ideas for how to make Oy better, please
-send a pull request, file an issue, or email [vivek@oysterbooks.com](mailto:vivek@oysterbooks.com)
+send a pull request, file an issue, or email [vivek@oysterbooks.com](mailto:vivek@oysterbooks.com).
+
+The best place to start would be in contributing new rules. [A running wishlist of email validation rules are in the Issues section](https://github.com/oysterbooks/oy/issues?q=is%3Aopen+is%3Aissue+label%3A%22rule+wishlist%22).
