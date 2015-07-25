@@ -21,7 +21,7 @@ npm install --save oy
 Oy provides the tools necessary to fill the gaps that React can’t 
 (and probably shouldn’t) to help us render email templates on the server.
 
-#### TODO: Picture
+![Oy Architecture](https://s3.amazonaws.com/oyster-web-static/oy-architecture.jpg)
 
 ## Example usage
 
