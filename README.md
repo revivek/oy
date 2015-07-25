@@ -8,7 +8,7 @@ React components and utilities for server-side HTML email template construction.
 - Validate attributes based on best-practices.
 - Render your templates server-side.
 
-[Blogpost](#TODO)
+[Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react)
 
 ## Installation
 
