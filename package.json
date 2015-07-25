@@ -2,7 +2,17 @@
   "name": "oy",
   "description": "React components for building emails.",
   "version": "0.0.1",
+  "keywords": [
+    "react",
+    "email"
+  ],
+  "author": "Vivek Patel <vivek@oysterbooks.com>",
+  "bugs": "https://github.com/oysterbooks/oy/issues",
   "main": "lib/Oy.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oysterbooks/oy"
+  },
   "dependencies": {
     "react": "^0.13.3"
   },
