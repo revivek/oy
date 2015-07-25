@@ -18,10 +18,10 @@
   },
   "devDependencies": {
     "babel": "^5.5.6",
-    "mocha": "^2.2.5"
+    "jasmine": "^2.3.1"
   },
   "scripts": {
     "compile": "babel -d lib/ src/",
-    "test": "mocha --recursive --compilers jsx:babel/register src/__tests__ src/**/__tests__"
+    "test": "npm run compile; NODE_ENV=test JASMINE_CONFIG_PATH=jasmine.json jasmine"
   }
 }
