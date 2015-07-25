@@ -2,7 +2,6 @@
   "name": "oy",
   "description": "React components for building emails.",
   "version": "0.0.1",
-  "private": true,
   "main": "lib/Oy.js",
   "dependencies": {
     "react": "^0.13.3"
