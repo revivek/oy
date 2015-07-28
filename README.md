@@ -13,7 +13,7 @@ React components and utilities for server-side HTML email template construction.
 ## Installation
 
 ```
-npm install --save oysterbooks/oy
+npm install --save oy-vey
 ```
 
 ## Architecture
@@ -31,7 +31,7 @@ Oy provides the tools necessary to fill the gaps that React can’t
 // MyTable
 
 import React from 'react';
-import Oy from 'oy';
+import Oy from 'oy-vey';
 
 
 export default React.createClass({
