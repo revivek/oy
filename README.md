@@ -13,7 +13,7 @@ React components and utilities for server-side HTML email template construction.
 ## Installation
 
 ```
-npm install --save oy
+npm install --save oysterbooks/oy
 ```
 
 ## Architecture
