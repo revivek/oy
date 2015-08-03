@@ -1,4 +1,4 @@
-# Oy
+# Oy [![npm version](https://badge.fury.io/js/oy-vey.svg)](http://badge.fury.io/js/oy-vey)
 
 *Emails, oy vey!*
 
