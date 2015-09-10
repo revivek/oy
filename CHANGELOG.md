@@ -1,5 +1,6 @@
-## 0.1.0 (September 30, 2015)
+## 0.1.0 (September 10, 2015)
 
+- Allow custom template generators
 - More rules:
   - HrefAbsoluteURLRule
   - SrcAbsoluteURLRule
