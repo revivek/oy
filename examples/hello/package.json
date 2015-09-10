@@ -1,0 +1,12 @@
+{
+  "name": "oy-example",
+  "description": "An example app demonstrating how Oy might be used.",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "babel": "^5.8.3",
+    "express": "^4.12.3",
+    "oy-vey": "*",
+    "react": "^0.13.3"
+  }
+}
