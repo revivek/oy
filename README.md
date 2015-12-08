@@ -93,7 +93,7 @@ import BodyText from './modules/BodyText.jsx';
 
 
 export default React.createClass({
-  displayName: 'OyGettingStartedEmail',
+  displayName: 'GettingStartedEmail',
 
   render: function() {
     return (
@@ -115,7 +115,7 @@ import express from 'express';
 import React from 'react';
 import Oy from 'oy';
 
-import OyGettingStartedEmail from './templates/OyGettingStartedEmail.jsx';
+import GettingStartedEmail from './templates/GettingStartedEmail.jsx';
 
 
 var server = express();
@@ -123,9 +123,9 @@ server.set('port', (process.env.PORT || 8887));
 
 server.get('/email/oy', (req, res) => {
   const template = Oy.renderTemplate({
-    title: 'Oyster',
+    title: 'Getting Started with Foo',
     headCSS: '@media ...',
-    bodyContent: React.renderToStaticMarkup(<OyGettingStartedEmail />)
+    bodyContent: React.renderToStaticMarkup(<GettingStartedEmail />)
   });
   res.send(template);
 });
@@ -145,6 +145,6 @@ npm test
 ## Contributing
 
 We welcome contributions. If there's some information missing or ideas for how to make Oy better, please
-send a pull request, file an issue, or email [vivek@oysterbooks.com](mailto:vivek@oysterbooks.com).
+send a pull request, file an issue, or email [patelvivek@google.com](mailto:patelvivek@google.com).
 
 The best place to start would be in contributing new rules. [A running wishlist of email validation rules are in the Issues section](https://github.com/oysterbooks/oy/issues?q=is%3Aopen+is%3Aissue+label%3A%22rule+wishlist%22).
