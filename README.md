@@ -136,13 +136,15 @@ server.listen(server.get('port'), () => {
 ```
 
 
-## Testing
-
-```
-npm test
-```
-
 ## Contributing
+
+```
+# Test
+npm test
+
+# Compile from ES6 in src/ to ES5 in lib/
+npm run compile
+```
 
 We welcome contributions. If there's some information missing or ideas for how to make Oy better, please
 send a pull request, file an issue, or email [patelvivek@google.com](mailto:patelvivek@google.com).
