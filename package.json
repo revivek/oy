@@ -6,7 +6,7 @@
     "react",
     "email"
   ],
-  "author": "Vivek Patel <vivek@oysterbooks.com>",
+  "author": "Vivek Patel <patelvivek@google.com>",
   "bugs": "https://github.com/oysterbooks/oy/issues",
   "main": "lib/Oy.js",
   "repository": {
