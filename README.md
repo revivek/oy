@@ -113,7 +113,7 @@ Using Express.js:
 ```js
 import express from 'express';
 import React from 'react';
-import Oy from 'oy';
+import Oy from 'oy-vey';
 
 import GettingStartedEmail from './templates/GettingStartedEmail.jsx';
 
