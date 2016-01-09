@@ -1,6 +1,6 @@
 /**
- * MyTD:
- * My component wrapping OyTD and providing custom rules.
+ * MyTR:
+ * My component wrapping OyTR and providing custom rules.
  */
 
 import React from 'react';
@@ -8,13 +8,13 @@ import Oy from 'oy-vey';
 
 
 export default React.createClass({
-  displayName: 'MyTD',
+  displayName: 'MyTR',
 
   propTypes: {
     bgColor: Oy.PropTypes.rules(['SixCharacterHexBackgroundColorRule'])
   },
 
   render: function() {
-    return <Oy.Element type="td" {...this.props} />;
+    return <Oy.Element type="tr" {...this.props} />;
   }
 });
