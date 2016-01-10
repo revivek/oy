@@ -1,5 +1,7 @@
 import React from 'react';
 
+import EmptySpace from './EmptySpace.jsx';
+
 import {MyTable, MyTD, MyTR} from '../elements/My';
 
 
@@ -12,9 +14,7 @@ export default React.createClass({
 
   render: function() {
     const style = {
-      height: 120,
       color: this.props.color,
-      borderBottom: '2px solid #92949c',
       fontWeight: 'bold'
     };
 
@@ -22,10 +22,10 @@ export default React.createClass({
       <MyTable
         width="100%"
         height="120"
-        color={this.props.color}
-        style={style}>
+        color={this.props.color}>
         <MyTR>
           <MyTD>
+            <EmptySpace height={50} />
 
             {/* Text area, could be another component, i.e. HeroText */}
             <MyTable width="100%">
@@ -38,7 +38,7 @@ export default React.createClass({
               </MyTR>
             </MyTable>
 
-
+            <EmptySpace height={50} />
           </MyTD>
         </MyTR>
       </MyTable>
