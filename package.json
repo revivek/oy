@@ -14,7 +14,7 @@
     "url": "https://github.com/oysterbooks/oy"
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.6"
   },
   "devDependencies": {
     "babel": "^5.5.6",
