@@ -1,3 +1,8 @@
+## 0.2.2 (January 26, 2015)
+
+- NPM publishing of version 0.2.1
+- Refactor to use `is` attribute to remove `data-*` find-and-replace.
+
 ## 0.2.1 (January 26, 2015)
 
 - Bump React version to 0.14.6.
