@@ -13,9 +13,10 @@ export default React.createClass({
   render: function() {
     return (
       <table {...this.props}
-        data-align={this.props.align}
-        data-bgcolor={this.props.bgColor}
-        data-valign={this.props.vAlign}>
+        is
+        align={this.props.align}
+        bgcolor={this.props.bgColor}
+        valign={this.props.vAlign}>
         {this.props.children}
       </table>
     );
