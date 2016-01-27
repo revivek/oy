@@ -1,3 +1,14 @@
+## 0.2.1 (January 26, 2015)
+
+- Bump React version to 0.14.6.
+- Fix issue #19 regarding deleting `type` prop.
+
+## 0.2.0 (December 15, 2015)
+
+- Add HelloWorld example
+- New rule:
+  - ImgDimensionsRule
+
 ## 0.1.0 (September 10, 2015)
 
 - Allow custom template generators
