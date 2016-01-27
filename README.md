@@ -87,7 +87,7 @@ export default React.createClass({
 ```js
 import React from 'react';
 
-import OyLayout from './layout/OyLayout.jsx';
+import MyLayout from './layout/MyLayout.jsx';
 
 import BodyText from './modules/BodyText.jsx';
 
@@ -97,9 +97,9 @@ export default React.createClass({
 
   render: function() {
     return (
-      <OyLayout>
+      <MyLayout>
         <BodyText>Welcome to Oy!</BodyText>
-      </OyLayout>
+      </MyLayout>
     );
   }
 });
