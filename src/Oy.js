@@ -33,10 +33,8 @@ export default {
   },
 
   renderTemplate: (options, generateCustomTemplate) => {
-    const rawHTML = (
-      generateCustomTemplate ? generateCustomTemplate(options) : HTML4.generateDefaultTemplate(options)
-    );
-
-    return HTML4.replaceWhitelistedAttributes(rawHTML);
+    return generateCustomTemplate ? (
+      generateCustomTemplate(options)
+    ) : HTML4.generateDefaultTemplate(options);
   }
 };
