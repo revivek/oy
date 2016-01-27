@@ -1,5 +1,6 @@
 import Oy from 'oy-vey';
 import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 import express from 'express';
 
 import HelloWorldEmail from './HelloWorldEmail.jsx';
@@ -12,7 +13,7 @@ server.set('port', (process.env.PORT || 8887));
 server.get('/', (req, res) => {
   const html = Oy.renderTemplate({
     title: 'This is an example',
-    bodyContent: React.renderToStaticMarkup(<HelloWorldEmail />),
+    bodyContent: ReactDOMServer.renderToStaticMarkup(<HelloWorldEmail />),
     previewText: 'This is an example'
   });
 

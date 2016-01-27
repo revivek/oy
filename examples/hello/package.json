@@ -6,7 +6,8 @@
   "dependencies": {
     "babel": "^5.8.3",
     "express": "^4.12.3",
-    "oy-vey": "*",
-    "react": "^0.13.3"
+    "oy-vey": "../..",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
   }
 }
