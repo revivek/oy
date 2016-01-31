@@ -1,18 +1,18 @@
 const attributeWhitelist = [
   {
-    regex: /data-align/g,
+    regex: /data-oy-align/g,
     replacement: 'align'
   },
   {
-    regex: /data-valign/g,
+    regex: /data-oy-valign/g,
     replacement: 'valign'
   },
   {
-    regex: /data-background/g,
+    regex: /data-oy-background/g,
     replacement: 'background'
   },
   {
-    regex: /data-bgcolor/g,
+    regex: /data-oy-bgcolor/g,
     replacement: 'bgcolor'
   }
 ];
