@@ -14,11 +14,10 @@ export default React.createClass({
   render: function() {
     return (
       <td {...this.props}
-        is
-        align={this.props.align}
-        valign={this.props.vAlign}
-        background={this.props.background}
-        bgcolor={this.props.bgColor}>
+        data-align={this.props.align}
+        data-valign={this.props.vAlign}
+        data-background={this.props.background}
+        data-bgcolor={this.props.bgColor}>
         {this.props.children}
       </td>
     );
