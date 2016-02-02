@@ -1,9 +1,15 @@
-## 0.2.2 (January 26, 2015)
+## 0.2.3 (February 1, 2016)
+
+- Fix regression of `type` attribute propagating to Oy.Element elements.
+- Namespace `data-*` attributes to decrease likelihood of attribute collisions.
+- Add tests to components.
+
+## 0.2.2 (January 26, 2016)
 
 - NPM publishing of version 0.2.1
 - Refactor to use `is` attribute to remove `data-*` find-and-replace.
 
-## 0.2.1 (January 26, 2015)
+## 0.2.1 (January 26, 2016)
 
 - Bump React version to 0.14.6.
 - Fix issue #19 regarding deleting `type` prop.
