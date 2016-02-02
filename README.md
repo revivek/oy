@@ -2,11 +2,11 @@
 
 *Emails, oy vey!*
 
-React components and utilities for server-side HTML email template construction. Oy provides utilities to:
+Render HTML emails on the server with React. Oy provides functionality to:
 
-- Move backwards in time to render HTML4, since React only supports HTML5.
-- Validate attributes based on best-practices.
-- Render your templates server-side.
+- Render HTML4 attributes with the `Oy.Element` component.
+- Validate props against email best-practices with `Oy.PropTypes`.
+- Render templates server-side with `Oy.renderTemplate`.
 
 [Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react)
 
@@ -15,13 +15,6 @@ React components and utilities for server-side HTML email template construction.
 ```
 npm install --save oy-vey
 ```
-
-## Architecture
-
-Oy provides the tools necessary to fill the gaps that React can’t 
-(and probably shouldn’t) to help us render email templates on the server.
-
-![Oy Architecture](https://s3.amazonaws.com/oyster-web-static/oy-architecture.jpg)
 
 ## Example usage
 
@@ -45,7 +38,7 @@ export default React.createClass({
   },
 
   render: function() {
-    return <Oy.Element type="table" {...this.props} />;
+    return <Oy.Element tagName="table" {...this.props} />;
   }
 });
 ```

@@ -21,6 +21,6 @@ export default React.createClass({
   },
 
   render: function() {
-    return <Oy.Element type="img" {...this.props} />;
+    return <Oy.Element tagName="img" {...this.props} />;
   }
 });

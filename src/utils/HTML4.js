@@ -1,28 +1,30 @@
-const attributeWhitelist = [
-  {
-    regex: /data-oy-align/g,
-    replacement: 'align'
-  },
-  {
-    regex: /data-oy-valign/g,
-    replacement: 'valign'
-  },
-  {
-    regex: /data-oy-background/g,
-    replacement: 'background'
-  },
-  {
-    regex: /data-oy-bgcolor/g,
-    replacement: 'bgcolor'
-  }
-];
-
+const supportedPropsToTransformableAttributes = {
+  align: 'align',
+  background: 'background',
+  bgColor: 'bgcolor',
+  border: 'border',
+  vAlign: 'valign'
+};
 
 export default {
+  supportedPropsToTransformableAttributes:
+    supportedPropsToTransformableAttributes,
+
   replaceWhitelistedAttributes: (html) => {
-    return attributeWhitelist.reduce((previousHTML, attribute) => {
-      return previousHTML.replace(attribute.regex, attribute.replacement)
-    }, html);
+    return Object.keys(supportedPropsToTransformableAttributes)
+      .map((supportedProp) => {
+        const supportedAttribute = (
+          supportedPropsToTransformableAttributes[supportedProp]
+        );
+
+        return {
+          regex: new RegExp(`data-oy-${supportedAttribute}`, 'g'),
+          replacement: supportedAttribute
+        };
+      })
+      .reduce((previousHTML, attribute) => {
+        return previousHTML.replace(attribute.regex, attribute.replacement)
+      }, html);
   },
 
   generateDefaultTemplate: ({title, bodyContent, previewText, headCSS=''}) => {

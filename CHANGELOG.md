@@ -1,3 +1,9 @@
+## 0.3.0 (February 3, 2016)
+
+- Deprecation warning added for Oy.Element `type` prop. Use `tagName` instead.
+- Added warning for Oy.renderTemplate outputs larger than 100KB.
+- Opened up Oy-supported attributes to all Oy.Element components.
+
 ## 0.2.3 (February 1, 2016)
 
 - Fix regression of `type` attribute propagating to Oy.Element elements.

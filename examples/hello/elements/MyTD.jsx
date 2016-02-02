@@ -15,6 +15,6 @@ export default React.createClass({
   },
 
   render: function() {
-    return <Oy.Element type="td" {...this.props} />;
+    return <Oy.Element tagName="td" {...this.props} />;
   }
 });

@@ -26,6 +26,6 @@ export default React.createClass({
   },
 
   render: function() {
-    return <Oy.Element type="table" {...this.props} />;
+    return <Oy.Element tagName="table" {...this.props} />;
   }
 });

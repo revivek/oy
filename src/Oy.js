@@ -8,12 +8,11 @@
  */
 
 import HTML4 from './utils/HTML4';
-
-import OyElement from './components/OyElement';
+import Element from './components/Element';
 
 
 export default {
-  Element: OyElement,
+  Element: Element,
 
   PropTypes: {
     rules: (ruleNames) => {

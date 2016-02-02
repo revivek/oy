@@ -3,6 +3,7 @@
     "spec_files": [
         "__tests__/*-test.js",
         "rules/__tests__/*-test.js",
-        "components/__tests__/*-test.js"
+        "components/__tests__/*-test.js",
+        "utils/__tests__/*-test.js"
     ]
 }
