@@ -24,4 +24,20 @@ describe('OyElement', function() {
     expect(result.type).toEqual('a');
     expect(result.props.className).toEqual('myanchor');
   });
+
+  it('should remove the `type` attribute from the rendered child element', function() {
+    shallowRenderer.render(<OyElement type="a" className="myanchor" />);
+    const result = shallowRenderer.getRenderOutput();
+    expect(result.type).toEqual('a');
+    expect(result.props.className).toEqual('myanchor');
+    expect(result.props.type).toEqual(null);
+  });
+
+  it('should remove the `type` attribute from the Oy rendered child element', function() {
+    shallowRenderer.render(<OyElement type="table" className="mytable" />);
+    const result = shallowRenderer.getRenderOutput();
+    expect(result.type.displayName).toEqual('OyTable');
+    expect(result.props.className).toEqual('mytable');
+    expect(result.props.type).toEqual(null);
+  });
 });

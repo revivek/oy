@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import objectAssign from 'object-assign';
 
 import OyImg from './OyImg';
 import OyTable from './OyTable';
@@ -30,6 +31,11 @@ export default React.createClass({
     const element = OY_COMPONENTS.hasOwnProperty(this.props.type) ? (
       OY_COMPONENTS[this.props.type]
     ) : this.props.type;
-    return React.createElement(element, this.props, this.props.children);
+
+    return React.createElement(
+      element,
+      objectAssign({}, this.props, {type: null}),
+      this.props.children
+    );
   }
 });
