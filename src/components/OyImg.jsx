@@ -12,8 +12,9 @@ export default React.createClass({
   render: function() {
     return (
       <img {...this.props}
-        data-border={this.props.border}
-        data-align={this.props.align} />
+        data-oy-border={this.props.border}
+        data-oy-align={this.props.align} />
     );
   }
 });
+
