@@ -135,6 +135,13 @@ server.listen(server.get('port'), () => {
 });
 ```
 
+## HTML attributes
+
+In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are supported on Oy.Element components:
+
+```
+align background bgColor border vAlign
+```
 
 ## Contributing
 
