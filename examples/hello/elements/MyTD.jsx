@@ -11,7 +11,8 @@ export default React.createClass({
   displayName: 'MyTD',
 
   propTypes: {
-    bgColor: Oy.PropTypes.rules(['SixCharacterHexBackgroundColorRule'])
+    bgColor: Oy.PropTypes.rules(['SixCharacterHexBackgroundColorRule']),
+    style: Oy.PropTypes.rules(['EmptyTDRule'])
   },
 
   render: function() {
