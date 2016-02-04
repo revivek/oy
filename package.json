@@ -24,7 +24,7 @@
     "react-addons-test-utils": "^0.14.6"
   },
   "scripts": {
-    "compile": "babel -d lib/ src/",
+    "compile": "rm -rf lib/; babel -d lib/ src/",
     "test": "npm run compile; NODE_ENV=test JASMINE_CONFIG_PATH=jasmine.json jasmine"
   }
 }
