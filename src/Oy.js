@@ -8,12 +8,11 @@
  */
 
 import HTML4 from './utils/HTML4';
-
-import OyElement from './components/OyElement';
+import Element from './components/Element';
 
 
 export default {
-  Element: OyElement,
+  Element: Element,
 
   PropTypes: {
     rules: (ruleNames) => {
@@ -37,6 +36,17 @@ export default {
       generateCustomTemplate ? generateCustomTemplate(options) : HTML4.generateDefaultTemplate(options)
     );
 
-    return HTML4.replaceWhitelistedAttributes(rawHTML);
+    const html = HTML4.replaceWhitelistedAttributes(rawHTML);
+    const bytes = Buffer.byteLength(html, 'utf8');
+
+    if (bytes > 1024 * 100) {
+      console.warn(
+        `Email output is ${Math.round(bytes / 1024)}KB. ` +
+        'It is recommended to keep the delivered HTML to smaller ' +
+        'than 100KB, to avoid getting emails cut off or rejected due to spam.'
+      );
+    }
+
+    return html;
   }
 };

@@ -15,6 +15,6 @@ export default React.createClass({
   },
 
   render: function() {
-    return <Oy.Element type="tr" {...this.props} />;
+    return <Oy.Element tagName="tr" {...this.props} />;
   }
 });

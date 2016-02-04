@@ -40,4 +40,14 @@ describe('Oy', function() {
     const rawHTML = Oy.renderTemplate({}, generateCustomTemplate);
     expect(rawHTML).toEqual('<h1>Testing 123</h1>');
   });
+
+  it('should warn on outputs larger than 100KB', function() {
+    console.warn = jasmine.createSpy('log');
+    const rawHTML = Oy.renderTemplate({
+      title: 'Foo bar',
+      bodyContent: Array(1024 * 101).join('.'),
+      previewText: 'Baz qux'
+    });
+    expect(console.warn).toHaveBeenCalled();
+  });
 });
