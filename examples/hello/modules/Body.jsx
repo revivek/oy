@@ -1,8 +1,7 @@
 import React from 'react';
+import {Table, TBody, TD, TR} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
-
-import {MyTable, MyTD, MyTR} from '../elements/My';
 
 
 export default React.createClass({
@@ -17,18 +16,19 @@ export default React.createClass({
     };
 
     return (
-      <MyTable
-        width="100%">
-        <MyTR>
-          <MyTD
-            align="center"
-            style={textStyle}>
-            <EmptySpace height={200} />
-            {this.props.children}
-            <EmptySpace height={200} />
-          </MyTD>
-        </MyTR>
-      </MyTable>
+      <Table width="100%">
+        <TBody>
+          <TR>
+            <TD
+              align="center"
+              style={textStyle}>
+              <EmptySpace height={200} />
+              {this.props.children}
+              <EmptySpace height={200} />
+            </TD>
+          </TR>
+        </TBody>
+      </Table>
     );
   }
 });

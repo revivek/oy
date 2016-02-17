@@ -1,8 +1,7 @@
 import React from 'react';
+import {Table, TBody, TD, TR, A} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
-
-import {MyTable, MyTD, MyTR} from '../elements/My';
 
 
 export default React.createClass({
@@ -24,83 +23,89 @@ export default React.createClass({
     };
 
     return (
-      <MyTable
+      <Table
         width="100%"
         style={style}>
+        <TBody>
 
-        <MyTR>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-        </MyTR>
+          <TR>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+          </TR>
 
-        <MyTR>
-          <MyTD
-            height="1"
-            width="20"
-            style={spaceStyle}>&nbsp;</MyTD>
+          <TR>
+            <TD
+              height="1"
+              width="20"
+              style={spaceStyle}>&nbsp;</TD>
 
-          <MyTD>
-            <MyTable width="270">
-              <MyTR>
-                <MyTD
-                  align="center"
-                  bgColor="#EEEEEE"
-                  style={{fontFamily: 'Arial'}}>
+            <TD>
+              <Table width="270">
+                <TBody>
+                  <TR>
+                    <TD
+                      align="center"
+                      bgColor="#EEEEEE"
+                      style={{fontFamily: 'Arial'}}>
 
-                  <EmptySpace height="10" />
+                      <EmptySpace height="10" />
 
-                  <a
-                    style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                    href="https://example.com">Our blog</a>
+                      <A
+                        style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
+                        href="https://example.com">Our blog</A>
 
-                  <EmptySpace height="10" />
-                </MyTD>
-              </MyTR>
-            </MyTable>
-          </MyTD>
+                      <EmptySpace height="10" />
+                    </TD>
+                  </TR>
+                </TBody>
+              </Table>
+            </TD>
 
-          <MyTD
-            height="1"
-            width="20"
-            style={spaceStyle}>&nbsp;</MyTD>
+            <TD
+              height="1"
+              width="20"
+              style={spaceStyle}>&nbsp;</TD>
 
-          <MyTD>
-            <MyTable width="270">
-              <MyTR>
-                <MyTD
-                  align="center"
-                  bgColor="#EEEEEE"
-                  style={{fontFamily: 'Arial'}}>
+            <TD>
+              <Table width="270">
+                <TBody>
+                  <TR>
+                    <TD
+                      align="center"
+                      bgColor="#EEEEEE"
+                      style={{fontFamily: 'Arial'}}>
 
-                  <EmptySpace height="10" />
+                      <EmptySpace height="10" />
 
-                  <a
-                    style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                    href="https://example.com">About us</a>
+                      <A
+                        style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
+                        href="https://example.com">About us</A>
 
-                  <EmptySpace height="10" />
-                </MyTD>
-              </MyTR>
-            </MyTable>
-          </MyTD>
+                      <EmptySpace height="10" />
+                    </TD>
+                  </TR>
+                </TBody>
+              </Table>
+            </TD>
 
-          <MyTD
-            height="1"
-            width="20"
-            style={spaceStyle}>&nbsp;</MyTD>
-        </MyTR>
+            <TD
+              height="1"
+              width="20"
+              style={spaceStyle}>&nbsp;</TD>
+          </TR>
 
-        <MyTR>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-          <MyTD><EmptySpace height="20" /></MyTD>
-        </MyTR>
-      </MyTable>
+          <TR>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+            <TD><EmptySpace height="20" /></TD>
+          </TR>
+        </TBody>
+      </Table>
     );
   }
 });
