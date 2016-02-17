@@ -1,3 +1,9 @@
+## 0.4.0 (February 16, 2016)
+
+- Expose `Table`, `TBody`, `TR`, `TD`, `Img`, and `A` components with default `propType` validations.
+- Remove Oy.Element `type` prop. Use `tagName` instead.
+- Updated Hello World example.
+
 ## 0.3.0 (February 4, 2016)
 
 - Deprecation warning added for Oy.Element `type` prop. Use `tagName` instead.
