@@ -113,7 +113,7 @@ If you want to circumvent this validation, you can use `Oy.Element` and pass the
 
 ## HTML attributes
 
-In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are supported on Oy.Element components:
+In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are supported on `Oy` components:
 
 ```
 align background bgColor border vAlign
