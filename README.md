@@ -4,8 +4,7 @@
 
 Render HTML emails on the server with React. Oy provides functionality to:
 
-- Render HTML4 attributes with the `Oy.Element` component.
-- Validate props against email best-practices with `Oy.PropTypes`.
+- Validate props against email best-practices with `Oy` components.
 - Render templates server-side with `Oy.renderTemplate`.
 
 [Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react)
@@ -18,40 +17,11 @@ npm install --save oy-vey
 
 ## Example usage
 
-### 1. Custom Oy components
-
-```js
-// MyTable
-
-import React from 'react';
-import Oy from 'oy-vey';
-
-
-export default React.createClass({
-  displayName: 'MyTable',
-
-  propTypes: {
-    bgColor: Oy.PropTypes.rules(['SixCharacterHexBackgroundColorRule']),
-    border: Oy.PropTypes.rules(['TableBorderRule']),
-    cellPadding: Oy.PropTypes.rules(['TableCellPaddingRule']),
-    cellSpacing: Oy.PropTypes.rules(['TableCellSpacingRule'])
-  },
-
-  render: function() {
-    return <Oy.Element tagName="table" {...this.props} />;
-  }
-});
-```
-
-
-### 2. Modules
+### Replace table markup with validating Oy components
 
 ```js
 import React from 'react';
-
-import MyTable from './my/MyTable.jsx';
-import MyTD from './my/MyTD.jsx';
-import MyTR from './my/MyTR.jsx';
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 
 export default React.createClass({
@@ -63,19 +33,21 @@ export default React.createClass({
 
   render: function() {
     return (
-      <MyTable width={this.props.maxWidth}>
-        <MyTR>
-          <MyTD align="center">
-            {this.props.children}
-          </MyTD>
-        </MyTR>
-      </MyTable>
+      <Table width={this.props.maxWidth}>
+        <TBody>
+          <TR>
+            <TD align="center">
+              {this.props.children}
+            </TD>
+          </TR>
+        </TBody>
+      </Table>
     );
   }
 });
 ```
 
-### 3. Template
+### Compose higher level components like usual
 
 ```js
 import React from 'react';
@@ -99,9 +71,9 @@ export default React.createClass({
 ```
 
 
-### 4. Server
+### Inject rendered code into HTML skeleton with Oy.renderTemplate
 
-Using Express.js:
+For example, if using Express.js:
 
 ```js
 import express from 'express';
@@ -111,14 +83,15 @@ import Oy from 'oy-vey';
 import GettingStartedEmail from './templates/GettingStartedEmail.jsx';
 
 
-var server = express();
+const server = express();
 server.set('port', (process.env.PORT || 8887));
 
 server.get('/email/oy', (req, res) => {
   const template = Oy.renderTemplate({
     title: 'Getting Started with Foo',
     headCSS: '@media ...',
-    bodyContent: React.renderToStaticMarkup(<GettingStartedEmail />)
+    bodyContent: React.renderToStaticMarkup(<GettingStartedEmail />),
+    previewText: 'Here is your guide...'
   });
   res.send(template);
 });
@@ -127,6 +100,16 @@ server.listen(server.get('port'), () => {
   console.log('Node server is running on port', server.get('port'));
 });
 ```
+
+## Default components
+
+The `Oy` namespace exposes the following components validated against email best practices: 
+
+```
+Table TBody TR TD Img A
+```
+
+If you want to circumvent this validation, you can use `Oy.Element` and pass the `tagName` prop to implement your own validated element.
 
 ## HTML attributes
 
