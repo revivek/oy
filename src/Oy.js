@@ -9,10 +9,17 @@
 
 import HTML4 from './utils/HTML4';
 import Element from './components/Element';
+import {Table, TBody, TD, TR, Img, A} from './components/DefaultElement';
 
 
 export default {
   Element: Element,
+  Table: Table,
+  TBody: TBody,
+  TD: TD,
+  TR: TR,
+  Img: Img,
+  A: A,
 
   PropTypes: {
     rules: (ruleNames) => {

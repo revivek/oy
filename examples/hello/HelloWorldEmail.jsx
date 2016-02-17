@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MyLayout from './layouts/MyLayout.jsx';
+import Layout from './layouts/Layout.jsx';
 
 import Header from './modules/Header.jsx';
 import Body from './modules/Body.jsx';
@@ -8,11 +8,9 @@ import Footer from './modules/Footer.jsx';
 
 
 export default React.createClass({
-  displayName: 'MyLayout',
-
   render: function() {
     return (
-      <MyLayout>
+      <Layout>
         <Header color="#134ac0" />
 
         <Body>
@@ -20,7 +18,7 @@ export default React.createClass({
         </Body>
 
         <Footer color="#134ac0" />
-      </MyLayout>
+      </Layout>
     );
   }
 });

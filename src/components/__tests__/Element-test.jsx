@@ -22,7 +22,6 @@ describe('Element', function() {
     shallowRenderer.render(table);
     const result = shallowRenderer.getRenderOutput();
     expect(result.props.className).toEqual('mytable');
-    expect(result.props.type).toEqual(null);
     expect(result.props.align).toEqual(null);
     expect(result.props.vAlign).toEqual(null);
     expect(result.props['data-oy-align']).toEqual('center');

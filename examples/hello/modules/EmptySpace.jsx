@@ -4,8 +4,7 @@
  */
 
 import React from 'react';
-
-import {MyTable, MyTD, MyTR} from '../elements/My';
+import {Table, TBody, TD, TR} from 'oy-vey';
 
 
 export default React.createClass({
@@ -25,17 +24,17 @@ export default React.createClass({
     };
 
     return (
-      <MyTable
-        width="100%">
-
-        <MyTR>
-          <MyTD
-            width="100%"
-            height={`${this.props.height}px`}
-            style={style}
-            dangerouslySetInnerHTML={{__html: '&nbsp;'}} />
-        </MyTR>
-      </MyTable>
+      <Table width="100%">
+        <TBody>
+          <TR>
+            <TD
+              width="100%"
+              height={`${this.props.height}px`}
+              style={style}
+              dangerouslySetInnerHTML={{__html: '&nbsp;'}} />
+          </TR>
+        </TBody>
+      </Table>
     );
   }
 });
