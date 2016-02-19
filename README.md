@@ -109,7 +109,7 @@ The `Oy` namespace exposes the following components validated against email best
 Table TBody TR TD Img A
 ```
 
-If you want to circumvent this validation, you can use `Oy.Element` and pass the `tagName` prop to implement your own validated element. If you additionally don’t mind React stripping the deprecated attributes below, you can use React DOM `Element` objects (i.e. use `<table>` instead of `<Table>`).
+If you want to circumvent this validation, you can use `Oy.Element` and pass the `tagName` prop to implement your own validated element. If you additionally don’t mind React stripping the attributes below, you can use React DOM `Element` objects (i.e. use `<table>` instead of `<Table>`).
 
 ## HTML attributes
 
