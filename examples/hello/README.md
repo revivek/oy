@@ -12,5 +12,5 @@ To run:
 
 ```
 npm install
-babel-node server.js
+npm start
 ```

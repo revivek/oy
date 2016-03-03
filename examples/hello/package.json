@@ -3,6 +3,10 @@
   "description": "An example app demonstrating how Oy might be used.",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start": "babel-node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "babel": "^5.8.3",
     "express": "^4.12.3",
