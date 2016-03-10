@@ -1,3 +1,7 @@
+## 0.5.0 (March 9, 2016)
+
+- Added `dir` and `lang` options to `Oy.renderTemplate` to support i18n.
+
 ## 0.4.0 (February 16, 2016)
 
 - Expose `Table`, `TBody`, `TR`, `TD`, `Img`, and `A` components with default `propType` validations.
