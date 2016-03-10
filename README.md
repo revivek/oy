@@ -23,28 +23,19 @@ npm install --save oy-vey
 import React from 'react';
 import {Table, TBody, TR, TD} from 'oy-vey';
 
-
-export default React.createClass({
-  displayName: 'BodyText',
-
-  propTypes: {
-    maxWidth: React.PropTypes.string.isRequired
-  },
-
-  render: function() {
-    return (
-      <Table width={this.props.maxWidth}>
-        <TBody>
-          <TR>
-            <TD align="center">
-              {this.props.children}
-            </TD>
-          </TR>
-        </TBody>
-      </Table>
-    );
-  }
-});
+export default (props) => {
+  return (
+    <Table width={props.maxWidth}>
+      <TBody>
+        <TR>
+          <TD align="center">
+            {props.children}
+          </TD>
+        </TR>
+      </TBody>
+    </Table>
+  );
+};
 ```
 
 ### Compose higher level components like usual
@@ -53,21 +44,15 @@ export default React.createClass({
 import React from 'react';
 
 import MyLayout from './layout/MyLayout.jsx';
-
 import BodyText from './modules/BodyText.jsx';
 
-
-export default React.createClass({
-  displayName: 'GettingStartedEmail',
-
-  render: function() {
-    return (
-      <MyLayout>
-        <BodyText>Welcome to Oy!</BodyText>
-      </MyLayout>
-    );
-  }
-});
+export default (props) => {
+  return (
+    <MyLayout>
+      <BodyText>Welcome to Oy!</BodyText>
+    </MyLayout>
+  );
+};
 ```
 
 
