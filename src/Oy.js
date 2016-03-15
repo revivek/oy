@@ -7,9 +7,43 @@
  * https://github.com/centralcollegenottingham/HTML-Email-Boilerplate-Redux/blob/master/htmlemail-boilerplate-stable-with-guidelines.html
  */
 
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import objectAssign from 'object-assign';
+import sanitizer from 'sanitizer';
+import CleanCSS from 'clean-css';
+
 import HTML4 from './utils/HTML4';
+import CSS from './utils/CSS';
 import Element from './components/Element';
 import {Table, TBody, TD, TR, Img, A} from './components/DefaultElement';
+
+
+const renderTemplateUnsafe = (options, generateCustomTemplate) => {
+  console.warn(
+    'Accepting bodyContent as an option is deprecated and will be removed ' +
+    'in the next minor release. Instead, pass the top-level ReactElement ' +
+    'as the first parameter, i.e. Oy.renderTemplate(<Template />, options)'
+  );
+  return generateCustomTemplate ? (
+    generateCustomTemplate(options)
+  ) : HTML4.generateDefaultTemplate(options);
+};
+
+const renderTemplateSafe = (element, options, generateCustomTemplate) => {
+  const bodyContent = ReactDOMServer.renderToStaticMarkup(element);
+  const minifiedHeadCSS = new CleanCSS().minify(options.headCSS).styles;
+  options = objectAssign({}, {
+    lang: sanitizer.escape(options.lang),
+    dir: sanitizer.escape(options.dir),
+    title: sanitizer.escape(options.title),
+    previewText: sanitizer.escape(options.previewText),
+    headCSS: CSS.raiseOnUnsafeCSS(minifiedHeadCSS, 'headCSS')
+  }, {bodyContent: bodyContent});
+  return generateCustomTemplate ? (
+    generateCustomTemplate(options)
+  ) : HTML4.generateDefaultTemplate(options);
+};
 
 
 export default {
@@ -38,10 +72,10 @@ export default {
     }
   },
 
-  renderTemplate: (options, generateCustomTemplate) => {
-    const rawHTML = (
-      generateCustomTemplate ? generateCustomTemplate(options) : HTML4.generateDefaultTemplate(options)
-    );
+  renderTemplate: function(options, generateCustomTemplate) {
+    let rawHTML = React.isValidElement(arguments[0]) ? (
+      renderTemplateSafe(...arguments)
+    ) : renderTemplateUnsafe(...arguments);
 
     const html = HTML4.replaceWhitelistedAttributes(rawHTML);
     const bytes = Buffer.byteLength(html, 'utf8');
