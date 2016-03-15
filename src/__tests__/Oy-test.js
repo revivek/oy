@@ -9,6 +9,15 @@ describe('Oy', function() {
     expect(Oy.renderTemplate).toBeDefined();
   });
 
+  it('should expose Table, TBody, TR, TD, Img, and A', function() {
+    expect(Oy.Table).toBeDefined();
+    expect(Oy.TBody).toBeDefined();
+    expect(Oy.TR).toBeDefined();
+    expect(Oy.TD).toBeDefined();
+    expect(Oy.Img).toBeDefined();
+    expect(Oy.A).toBeDefined();
+  });
+
   it('should use provided base template generator by default', function() {
     const shouldThrow = () => {
       Oy.renderTemplate({

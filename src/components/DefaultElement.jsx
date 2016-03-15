@@ -18,11 +18,11 @@ import Element from './Element';
 
 
 // <table> element
-const Table = (props) => {
+const Table_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'table'}));
 };
 
-Table.propTypes = {
+Table_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   border: TableBorderRule,
   cellPadding: TableCellPaddingRule,
@@ -30,48 +30,48 @@ Table.propTypes = {
   style: ShorthandFontRule
 };
 
-Table.defaultProps = {
+Table_.defaultProps = {
   border: 0,
   cellSpacing: 0,
   cellPadding: 0
 };
 
 // <tbody> element
-const TBody = (props) => {
+const TBody_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'tbody'}));
 };
 
-TBody.propTypes = {
+TBody_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule
 };
 
 // <tr> element
-const TR = (props) => {
+const TR_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'tr'}));
 };
 
-TR.propTypes = {
+TR_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   style: ShorthandFontRule
 };
 
 // <td> element
-const TD = (props) => {
+const TD_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'td'}));
 };
 
-TD.propTypes = {
+TD_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   children: EmptyTDRule,
   style: ShorthandFontRule
 };
 
 // <img> element
-const Img = (props) => {
+const Img_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'img'}));
 };
 
-Img.propTypes = {
+Img_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   height: ImgDimensionsRule,
   src: SrcAbsoluteURLRule,
@@ -79,21 +79,19 @@ Img.propTypes = {
 };
 
 // <a> element
-const A = (props) => {
+const A_ = (props) => {
   return Element(objectAssign({}, props, {tagName: 'a'}));
 };
 
-A.propTypes = {
+A_.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   href: HrefAbsoluteURLRule,
   style: ShorthandFontRule
 };
 
-export default {
-  Table: Table,
-  TBody: TBody,
-  TD: TD,
-  TR: TR,
-  Img: Img,
-  A: A
-};
+export const Table = Table_;
+export const TBody = TBody_;
+export const TD = TD_;
+export const TR = TR_;
+export const Img = Img_;
+export const A = A_;

@@ -1,3 +1,7 @@
+## 0.5.1 (March 15, 2016)
+
+- Fix bug with Babel ES6 module exports
+
 ## 0.5.0 (March 9, 2016)
 
 - Added `dir` and `lang` options to `Oy.renderTemplate` to support i18n.
