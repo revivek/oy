@@ -4,37 +4,36 @@
  */
 
 import React from 'react';
-import {Table, TBody, TD, TR} from 'oy-vey';
+import Oy from 'oy-vey';
 
 
-export default React.createClass({
-  displayName: 'EmptySpace',
+const {Table, TBody, TR, TD} = Oy;
 
-  getDefaultProps: function() {
-    return {
-      height: '16'
-    };
-  },
+const EmptySpace = (props) => {
+  const style = {
+    lineHeight: `${props.height}px`,
+    fontSize: '1px',
+    msoLineHeightRule: 'exactly'
+  };
 
-  render: function() {
-    const style = {
-      lineHeight: `${this.props.height}px`,
-      fontSize: '1px',
-      msoLineHeightRule: 'exactly'
-    };
+  return (
+    <Table width="100%">
+      <TBody>
+        <TR>
+          <TD
+            width="100%"
+            height={`${props.height}px`}
+            style={style}
+            dangerouslySetInnerHTML={{__html: '&nbsp;'}} />
+        </TR>
+      </TBody>
+    </Table>
+  );
+};
 
-    return (
-      <Table width="100%">
-        <TBody>
-          <TR>
-            <TD
-              width="100%"
-              height={`${this.props.height}px`}
-              style={style}
-              dangerouslySetInnerHTML={{__html: '&nbsp;'}} />
-          </TR>
-        </TBody>
-      </Table>
-    );
-  }
-});
+EmptySpace.defaultProps = {
+  height: '16'
+};
+
+
+export default EmptySpace;

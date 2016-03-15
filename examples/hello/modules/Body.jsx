@@ -1,34 +1,33 @@
 import React from 'react';
-import {Table, TBody, TD, TR} from 'oy-vey';
+import Oy from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
 
-export default React.createClass({
-  displayName: 'Body',
+const {Table, TBody, TR, TD} = Oy;
 
-  render: function() {
-    const textStyle = {
-      color: '#42444c',
-      backgroundColor: '#eeeeee',
-      fontFamily: 'Arial',
-      fontSize: '18px'
-    };
 
-    return (
-      <Table width="100%">
-        <TBody>
-          <TR>
-            <TD
-              align="center"
-              style={textStyle}>
-              <EmptySpace height={200} />
-              {this.props.children}
-              <EmptySpace height={200} />
-            </TD>
-          </TR>
-        </TBody>
-      </Table>
-    );
-  }
-});
+export default (props) => {
+  const textStyle = {
+    color: '#42444c',
+    backgroundColor: '#eeeeee',
+    fontFamily: 'Arial',
+    fontSize: '18px'
+  };
+
+  return (
+    <Table width="100%">
+      <TBody>
+        <TR>
+          <TD
+            align="center"
+            style={textStyle}>
+            <EmptySpace height={200} />
+            {props.children}
+            <EmptySpace height={200} />
+          </TD>
+        </TR>
+      </TBody>
+    </Table>
+  );
+};

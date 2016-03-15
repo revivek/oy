@@ -21,7 +21,9 @@ npm install --save oy-vey
 
 ```js
 import React from 'react';
-import {Table, TBody, TR, TD} from 'oy-vey';
+import Oy from 'oy-vey';
+
+const {Table, TBody, TR, TD} = Oy;
 
 export default (props) => {
   return (

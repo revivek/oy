@@ -1,111 +1,112 @@
 import React from 'react';
-import {Table, TBody, TD, TR, A} from 'oy-vey';
+import Oy from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
 
-export default React.createClass({
-  displayName: 'Footer',
+const {Table, TBody, TR, TD, A} = Oy;
 
-  propTypes: {
-    color: React.PropTypes.string.isRequired
-  },
+const Footer = (props) => {
+  const style = {
+    color: props.color,
+    backgroundColor: '#dddddd',
+  };
 
-  render: function() {
-    const style = {
-      color: this.props.color,
-      backgroundColor: '#dddddd',
-    };
+  const spaceStyle = {
+    lineHeight: '1px',
+    fontSize: '1px'
+  };
 
-    const spaceStyle = {
-      lineHeight: '1px',
-      fontSize: '1px'
-    };
+  return (
+    <Table
+      width="100%"
+      style={style}>
+      <TBody>
 
-    return (
-      <Table
-        width="100%"
-        style={style}>
-        <TBody>
+        <TR>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+        </TR>
 
-          <TR>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-          </TR>
+        <TR>
+          <TD
+            height="1"
+            width="20"
+            style={spaceStyle}>&nbsp;</TD>
 
-          <TR>
-            <TD
-              height="1"
-              width="20"
-              style={spaceStyle}>&nbsp;</TD>
+          <TD>
+            <Table width="270">
+              <TBody>
+                <TR>
+                  <TD
+                    align="center"
+                    bgColor="#EEEEEE"
+                    style={{fontFamily: 'Arial'}}>
 
-            <TD>
-              <Table width="270">
-                <TBody>
-                  <TR>
-                    <TD
-                      align="center"
-                      bgColor="#EEEEEE"
-                      style={{fontFamily: 'Arial'}}>
+                    <EmptySpace height="10" />
 
-                      <EmptySpace height="10" />
+                    <A
+                      style={{color: props.color, fontWeight: 'bold', textDecoration: 'none'}}
+                      href="https://example.com">Our blog</A>
 
-                      <A
-                        style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                        href="https://example.com">Our blog</A>
+                    <EmptySpace height="10" />
+                  </TD>
+                </TR>
+              </TBody>
+            </Table>
+          </TD>
 
-                      <EmptySpace height="10" />
-                    </TD>
-                  </TR>
-                </TBody>
-              </Table>
-            </TD>
+          <TD
+            height="1"
+            width="20"
+            style={spaceStyle}>&nbsp;</TD>
 
-            <TD
-              height="1"
-              width="20"
-              style={spaceStyle}>&nbsp;</TD>
+          <TD>
+            <Table width="270">
+              <TBody>
+                <TR>
+                  <TD
+                    align="center"
+                    bgColor="#EEEEEE"
+                    style={{fontFamily: 'Arial'}}>
 
-            <TD>
-              <Table width="270">
-                <TBody>
-                  <TR>
-                    <TD
-                      align="center"
-                      bgColor="#EEEEEE"
-                      style={{fontFamily: 'Arial'}}>
+                    <EmptySpace height="10" />
 
-                      <EmptySpace height="10" />
+                    <A
+                      style={{color: props.color, fontWeight: 'bold', textDecoration: 'none'}}
+                      href="https://example.com">About us</A>
 
-                      <A
-                        style={{color: this.props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                        href="https://example.com">About us</A>
+                    <EmptySpace height="10" />
+                  </TD>
+                </TR>
+              </TBody>
+            </Table>
+          </TD>
 
-                      <EmptySpace height="10" />
-                    </TD>
-                  </TR>
-                </TBody>
-              </Table>
-            </TD>
+          <TD
+            height="1"
+            width="20"
+            style={spaceStyle}>&nbsp;</TD>
+        </TR>
 
-            <TD
-              height="1"
-              width="20"
-              style={spaceStyle}>&nbsp;</TD>
-          </TR>
+        <TR>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+          <TD><EmptySpace height="20" /></TD>
+        </TR>
+      </TBody>
+    </Table>
+  );
+};
 
-          <TR>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-            <TD><EmptySpace height="20" /></TD>
-          </TR>
-        </TBody>
-      </Table>
-    );
-  }
-});
+Footer.propTypes = {
+  color: React.PropTypes.string.isRequired
+};
+
+
+export default Footer;

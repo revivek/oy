@@ -1,49 +1,47 @@
 import React from 'react';
-import {Table, TBody, TD, TR} from 'oy-vey';
+import Oy from 'oy-vey';
 
 
-export default React.createClass({
-  displayName: 'Layout',
+const {Table, TBody, TR, TD} = Oy;
 
-  render: function() {
-    return (
-      <Table
-        width="100%"
-        align="center"
-        style={{WebkitTextSizeAdjust: '100%', msTextSizeAdjust: '100%', msoTableLspace: '0pt', msoTableRspace: '0pt', borderCollapse: 'collapse', margin: '0px auto'}}>
-        <TBody>
-          <TR>
-            <TD align="center">
 
-              {/* Centered column */}
-              <Table
-                width="600"
-                align="center"
-                style={{WebkitTextSizeAdjust: '100%', msTextSizeAdjust: '100%', msoTableLspace: '0pt', msoTableRspace: '0pt', borderCollapse: 'collapse', margin: '0px auto'}}>
-                <TBody>
-                  <TR>
-                    <TD>
-                      {this.props.children}
-                    </TD>
-                  </TR>
-                </TBody>
-              </Table>
+export default (props) => {
+  return (
+    <Table
+      width="100%"
+      align="center"
+      style={{WebkitTextSizeAdjust: '100%', msTextSizeAdjust: '100%', msoTableLspace: '0pt', msoTableRspace: '0pt', borderCollapse: 'collapse', margin: '0px auto'}}>
+      <TBody>
+        <TR>
+          <TD align="center">
 
-            </TD>
-          </TR>
+            {/* Centered column */}
+            <Table
+              width="600"
+              align="center"
+              style={{WebkitTextSizeAdjust: '100%', msTextSizeAdjust: '100%', msoTableLspace: '0pt', msoTableRspace: '0pt', borderCollapse: 'collapse', margin: '0px auto'}}>
+              <TBody>
+                <TR>
+                  <TD>
+                    {props.children}
+                  </TD>
+                </TR>
+              </TBody>
+            </Table>
 
-          <TR>
-            <TD>
-              {/* We don't care to run validation on this img tag, so leave as is. */}
-              <img
-                src="https://example.com/tracker"
-                height="1"
-                style={{display: 'block', height: '1px', width: '1px'}} />
-            </TD>
-          </TR>
-        </TBody>
-      </Table>
-    );
-  }
-});
+          </TD>
+        </TR>
 
+        <TR>
+          <TD>
+            {/* We don't care to run validation on this img tag, so leave as is. */}
+            <img
+              src="https://example.com/tracker"
+              height="1"
+              style={{display: 'block', height: '1px', width: '1px'}} />
+          </TD>
+        </TR>
+      </TBody>
+    </Table>
+  );
+};
