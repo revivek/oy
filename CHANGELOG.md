@@ -1,3 +1,7 @@
+## 0.5.2 (March 15, 2016)
+
+- Fix 0.5.1 bug in examples directory
+
 ## 0.5.1 (March 15, 2016)
 
 - Fix bug with Babel ES6 module exports
