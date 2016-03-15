@@ -1,10 +1,9 @@
-## 0.5.2 (March 15, 2016)
+## 0.5.1, 0.5.2, 0.5.3 (March 15, 2016)
 
+- Fix babel-react preset bug
 - Fix 0.5.1 bug in examples directory
-
-## 0.5.1 (March 15, 2016)
-
-- Fix bug with Babel ES6 module exports
+- Fix bug with Babel ES6 module exports change
+- Update to Babel 6
 
 ## 0.5.0 (March 9, 2016)
 
