@@ -11,9 +11,8 @@ server.set('port', (process.env.PORT || 8887));
 
 
 server.get('/', (req, res) => {
-  const html = Oy.renderTemplate({
+  const html = Oy.renderTemplate(<HelloWorldEmail />, {
     title: 'This is an example',
-    bodyContent: ReactDOMServer.renderToStaticMarkup(<HelloWorldEmail />),
     previewText: 'This is an example'
   });
 

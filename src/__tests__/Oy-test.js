@@ -1,7 +1,13 @@
+import React from 'react';
+
 import Oy from '../Oy';
 
 
 describe('Oy', function() {
+  beforeEach(function() {
+    console.warn = () => { /* no-op by default */ };
+  });
+
   it('should expose PropTypes, Element, and renderTemplate', function() {
     expect(Oy.PropTypes).toBeDefined();
     expect(Oy.PropTypes.rules).toBeDefined();
@@ -93,5 +99,71 @@ describe('Oy', function() {
 
     expect(rawHTML).toContain('dir="ltr"');
     expect(rawHTML).toContain('lang="fr"');
+  });
+
+  it('should consume the component as the first parameter', function() {
+    const Foo = () => <div>should be rendered</div>;
+    const rawHTML = Oy.renderTemplate(<Foo />, {
+      title: 'A title',
+      previewText: 'Some preview text.',
+    });
+
+    expect(rawHTML).toContain('should be rendered');
+  });
+
+  it('should escape the template options for the new renderTemplate structure', function() {
+    const Foo = () => <div>should be rendered</div>;
+    const rawHTML = Oy.renderTemplate(<Foo />, {
+      title: '</title><meta http-equiv="Content-Type"  content="text/html charset="ISO-8859-1" /><title>',
+      previewText: '<script>alert(\'evil\')</script>',
+    });
+
+    expect(rawHTML).toContain('should be rendered');
+    expect(rawHTML).toContain('&lt;/title&gt;&lt;meta http-equiv=&#34;Content-Type&#34;  content=&#34;text/html charset=&#34;ISO-8859-1&#34; /&gt;&lt;title&gt;');
+    expect(rawHTML).toContain('&lt;script&gt;alert(\'evil\')&lt;/script&gt;');
+  });
+
+  it('should throw on unsafe css', function() {
+    const Foo = () => <div>should be rendered</div>;
+    const shouldThrowBecauseOfMozBinding = () => {
+      Oy.renderTemplate(<Foo />, {
+        title: 'foo',
+        previewText: 'bar',
+        headCSS: 'body{-moz-binding: url("http://www.website.com/xss.xml#test")}'
+      });
+    };
+    const shouldThrowBecauseOfExpression = () => {
+      Oy.renderTemplate(<Foo />, {
+        title: 'foo',
+        previewText: 'bar',
+        headCSS: 'body{xss:expr/*XSS*/ession(alert("XSS"))}'
+      });
+    };
+    const shouldThrowBecauseOfClosingStyleTag = () => {
+      Oy.renderTemplate(<Foo />, {
+        title: 'foo',
+        previewText: 'bar',
+        headCSS: '</style>'
+      });
+    };
+
+    expect(shouldThrowBecauseOfMozBinding).toThrow();
+    expect(shouldThrowBecauseOfExpression).toThrow();
+    expect(shouldThrowBecauseOfClosingStyleTag).toThrow();
+  });
+
+  it('should log a warning on the old renderTemplate API', function() {
+    console.warn = jasmine.createSpy('log');
+    const Foo = () => <div>should be rendered</div>;
+    const rawHTML = Oy.renderTemplate({
+      title: 'Foo bar',
+      bodyContent: <Foo />,
+      previewText: 'Baz qux'
+    });
+    expect(console.warn).toHaveBeenCalledWith(
+      'Accepting bodyContent as an option is deprecated and will be removed ' +
+      'in the next minor release. Instead, pass the top-level ReactElement ' +
+      'as the first parameter, i.e. Oy.renderTemplate(<Template />, options)'
+    );
   });
 });
