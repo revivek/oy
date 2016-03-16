@@ -1,9 +1,3 @@
-/**
- * Renderer
- *
- * TODO(patelvivek): New name?
- */
-
 import CleanCSS from 'clean-css';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
