@@ -1,4 +1,4 @@
-# Oy [![npm version](https://badge.fury.io/js/oy-vey.svg)](http://badge.fury.io/js/oy-vey) [![Build Status](https://travis-ci.org/revivek/oy.svg?branch=master)](https://travis-ci.org/revivek/oy) [![Coverage Status](https://coveralls.io/repos/github/revivek/oy/badge.svg?branch=master)](https://coveralls.io/github/revivek/oy?branch=master)
+# Oy [![npm version](https://badge.fury.io/js/oy-vey.svg)](http://badge.fury.io/js/oy-vey) [![Build Status](https://travis-ci.org/revivek/oy.svg?branch=master)](https://travis-ci.org/revivek/oy)
 
 *Emails, oy vey!*
 
