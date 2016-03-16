@@ -5,6 +5,7 @@ import Oy from '../Oy';
 
 describe('Oy', function() {
   beforeEach(function() {
+    // TODO: Don't swallow all warnings by default.
     console.warn = () => { /* no-op by default */ };
   });
 
@@ -152,18 +153,17 @@ describe('Oy', function() {
     expect(shouldThrowBecauseOfClosingStyleTag).toThrow();
   });
 
-  it('should log a warning on the old renderTemplate API', function() {
-    console.warn = jasmine.createSpy('log');
-    const Foo = () => <div>should be rendered</div>;
-    const rawHTML = Oy.renderTemplate({
+  it('should raise warning on basic validation error', function() {
+    console.error = jasmine.createSpy('propType');
+    const FooA = () => <Oy.A href="example.com">a link</Oy.A>;
+    const rawHTML = Oy.renderTemplate(<FooA />, {
       title: 'Foo bar',
-      bodyContent: <Foo />,
       previewText: 'Baz qux'
     });
-    expect(console.warn).toHaveBeenCalledWith(
-      'Accepting bodyContent as an option is deprecated and will be removed ' +
-      'in the next minor release. Instead, pass the top-level ReactElement ' +
-      'as the first parameter, i.e. Oy.renderTemplate(<Template />, options)'
+    expect(console.error).toHaveBeenCalledWith(
+      'Warning: Failed propType: Relative links can break (i.e. if ' +
+      'recipients are outside the company network) and make your ' +
+      'content unavailable to view Check the render method of `FooA`.'
     );
   });
 });

@@ -18,11 +18,11 @@ import Element from './Element';
 
 
 // <table> element
-const Table_ = (props) => {
+const Table = (props) => {
   return Element(objectAssign({}, props, {tagName: 'table'}));
 };
 
-Table_.propTypes = {
+Table.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   border: TableBorderRule,
   cellPadding: TableCellPaddingRule,
@@ -30,48 +30,48 @@ Table_.propTypes = {
   style: ShorthandFontRule
 };
 
-Table_.defaultProps = {
+Table.defaultProps = {
   border: 0,
   cellSpacing: 0,
   cellPadding: 0
 };
 
 // <tbody> element
-const TBody_ = (props) => {
+const TBody = (props) => {
   return Element(objectAssign({}, props, {tagName: 'tbody'}));
 };
 
-TBody_.propTypes = {
+TBody.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule
 };
 
 // <tr> element
-const TR_ = (props) => {
+const TR = (props) => {
   return Element(objectAssign({}, props, {tagName: 'tr'}));
 };
 
-TR_.propTypes = {
+TR.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   style: ShorthandFontRule
 };
 
 // <td> element
-const TD_ = (props) => {
+const TD = (props) => {
   return Element(objectAssign({}, props, {tagName: 'td'}));
 };
 
-TD_.propTypes = {
+TD.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   children: EmptyTDRule,
   style: ShorthandFontRule
 };
 
 // <img> element
-const Img_ = (props) => {
+const Img = (props) => {
   return Element(objectAssign({}, props, {tagName: 'img'}));
 };
 
-Img_.propTypes = {
+Img.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   height: ImgDimensionsRule,
   src: SrcAbsoluteURLRule,
@@ -79,19 +79,22 @@ Img_.propTypes = {
 };
 
 // <a> element
-const A_ = (props) => {
+const A = (props) => {
   return Element(objectAssign({}, props, {tagName: 'a'}));
 };
 
-A_.propTypes = {
+A.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   href: HrefAbsoluteURLRule,
   style: ShorthandFontRule
 };
 
-export const Table = Table_;
-export const TBody = TBody_;
-export const TD = TD_;
-export const TR = TR_;
-export const Img = Img_;
-export const A = A_;
+
+export default {
+  Table: Table,
+  TBody: TBody,
+  TD: TD,
+  TR: TR,
+  Img: Img,
+  A: A
+};
