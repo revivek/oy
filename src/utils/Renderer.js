@@ -44,7 +44,7 @@ const renderTemplateUnsafe = (options, generateCustomTemplate) => {
 
 export default {
   renderTemplate: (...args) => {
-    let rawHTML = React.isValidElement(args[0]) ? (
+    const rawHTML = React.isValidElement(args[0]) ? (
       renderTemplateSafe(...args)
     ) : renderTemplateUnsafe(...args);
 

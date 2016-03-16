@@ -1,0 +1,43 @@
+{
+  "parser": "babel-eslint",
+
+  "plugins": [
+    "react"
+  ],
+
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true,
+    "es6": true
+  },
+
+  "env": {
+    "browser": false,
+    "node": true
+  },
+
+  "rules": {
+    "quotes": [1, "single"],
+    "strict": 0,
+    "no-underscore-dangle": 0,
+    "brace-style": [1, "1tbs", {"allowSingleLine": true}],
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "max-nested-callbacks": [2, 3],
+    "no-lonely-if": 1,
+    "no-var": 1,
+    "prefer-const": 1,
+
+    "react/jsx-boolean-value": 1,
+    "react/jsx-no-undef": 1,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1,
+    "react/prefer-stateless-function": 1,
+    "react/no-did-mount-set-state": 1,
+    "react/no-did-update-set-state": 1,
+    "react/no-unknown-property": 1,
+    "react/react-in-jsx-scope": 1,
+    "react/self-closing-comp": 1,
+    "react/wrap-multilines": 1,
+    "react/sort-comp": 1
+  }
+}
