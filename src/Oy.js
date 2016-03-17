@@ -20,3 +20,10 @@ export default {
   // Render template
   renderTemplate: Renderer.renderTemplate
 };
+
+export const Table = DefaultElement.Table;
+export const TBody = DefaultElement.TBody;
+export const TD = DefaultElement.TD;
+export const TR = DefaultElement.TR;
+export const Img = DefaultElement.Img;
+export const A = DefaultElement.A;

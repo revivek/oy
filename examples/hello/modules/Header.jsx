@@ -1,10 +1,8 @@
 import React from 'react';
-import Oy from 'oy-vey';
+import {Table, TBody, TD, TR} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
-
-const {Table, TBody, TD, TR} = Oy;
 
 const Header = (props) => {
   const style = {

@@ -1,10 +1,7 @@
 import React from 'react';
-import Oy from 'oy-vey';
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
-
-
-const {Table, TBody, TR, TD} = Oy;
 
 
 export default (props) => {

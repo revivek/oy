@@ -1,8 +1,5 @@
 import React from 'react';
-import Oy from 'oy-vey';
-
-
-const {Table, TBody, TR, TD} = Oy;
+import {Table, TBody, TR, TD} from 'oy-vey';
 
 
 export default (props) => {

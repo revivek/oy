@@ -1,10 +1,8 @@
 import React from 'react';
-import Oy from 'oy-vey';
+import {Table, TBody, TR, TD, A} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
-
-const {Table, TBody, TR, TD, A} = Oy;
 
 const Footer = (props) => {
   const style = {

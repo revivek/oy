@@ -4,10 +4,8 @@
  */
 
 import React from 'react';
-import Oy from 'oy-vey';
+import {Table, TBody, TR, TD} from 'oy-vey';
 
-
-const {Table, TBody, TR, TD} = Oy;
 
 const EmptySpace = (props) => {
   const style = {

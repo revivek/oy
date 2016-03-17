@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Oy from '../Oy';
+import {Table, TBody, TR, TD, Img, A} from '../Oy';
 
 
 describe('Oy', function() {
@@ -23,6 +24,15 @@ describe('Oy', function() {
     expect(Oy.TD).toBeDefined();
     expect(Oy.Img).toBeDefined();
     expect(Oy.A).toBeDefined();
+  });
+
+  it('should additionally export named default Element components', function() {
+    expect(Table).toBeDefined();
+    expect(TBody).toBeDefined();
+    expect(TR).toBeDefined();
+    expect(TD).toBeDefined();
+    expect(Img).toBeDefined();
+    expect(A).toBeDefined();
   });
 
   it('should use provided base template generator by default', function() {
