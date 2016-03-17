@@ -1,3 +1,10 @@
+## 0.6.0 (March 16, 2016)
+
+- Migrate towards new API that consumes the top-level component directly.
+- Basic CSS security validation and minification for headCSS.
+- Adds better test coverage.
+- Add ESLint 2.0.
+
 ## 0.5.1, 0.5.2, 0.5.3 (March 15, 2016)
 
 - Fix babel-react preset bug
