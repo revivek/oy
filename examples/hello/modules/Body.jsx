@@ -1,5 +1,4 @@
 import React from 'react';
-import {Table, TBody, TR, TD} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
@@ -13,18 +12,18 @@ export default (props) => {
   };
 
   return (
-    <Table width="100%">
-      <TBody>
-        <TR>
-          <TD
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td
             align="center"
             style={textStyle}>
             <EmptySpace height={200} />
             {props.children}
             <EmptySpace height={200} />
-          </TD>
-        </TR>
-      </TBody>
-    </Table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };

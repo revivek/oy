@@ -1,5 +1,4 @@
 import React from 'react';
-import {Table, TBody, TD, TR} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
@@ -11,33 +10,33 @@ const Header = (props) => {
   };
 
   return (
-    <Table
+    <table
       width="100%"
       height="120"
       color={props.color}>
-      <TBody>
-        <TR>
-          <TD>
+      <tbody>
+        <tr>
+          <td>
             <EmptySpace height={50} />
 
             {/* Text area, could be another component, i.e. HeroText */}
-            <Table width="100%">
-              <TBody>
-                <TR>
-                  <TD
+            <table width="100%">
+              <tbody>
+                <tr>
+                  <td
                     align="center"
                     style={{color: props.color, fontFamily: 'Arial'}}>
                     Logo here
-                  </TD>
-                </TR>
-              </TBody>
-            </Table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
             <EmptySpace height={50} />
-          </TD>
-        </TR>
-      </TBody>
-    </Table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 

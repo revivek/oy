@@ -1,5 +1,4 @@
 import React from 'react';
-import {Table, TBody, TR, TD, A} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
 
@@ -16,89 +15,89 @@ const Footer = (props) => {
   };
 
   return (
-    <Table
+    <table
       width="100%"
       style={style}>
-      <TBody>
+      <tbody>
 
-        <TR>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-        </TR>
+        <tr>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+        </tr>
 
-        <TR>
-          <TD
+        <tr>
+          <td
             height="1"
             width="20"
-            style={spaceStyle}>&nbsp;</TD>
+            style={spaceStyle}>&nbsp;</td>
 
-          <TD>
-            <Table width="270">
-              <TBody>
-                <TR>
-                  <TD
+          <td>
+            <table width="270">
+              <tbody>
+                <tr>
+                  <td
                     align="center"
                     bgColor="#EEEEEE"
                     style={{fontFamily: 'Arial'}}>
 
                     <EmptySpace height="10" />
 
-                    <A
+                    <a
                       style={{color: props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                      href="https://example.com">Our blog</A>
+                      href="https://example.com">Our blog</a>
 
                     <EmptySpace height="10" />
-                  </TD>
-                </TR>
-              </TBody>
-            </Table>
-          </TD>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
 
-          <TD
+          <td
             height="1"
             width="20"
-            style={spaceStyle}>&nbsp;</TD>
+            style={spaceStyle}>&nbsp;</td>
 
-          <TD>
-            <Table width="270">
-              <TBody>
-                <TR>
-                  <TD
+          <td>
+            <table width="270">
+              <tbody>
+                <tr>
+                  <td
                     align="center"
                     bgColor="#EEEEEE"
                     style={{fontFamily: 'Arial'}}>
 
                     <EmptySpace height="10" />
 
-                    <A
+                    <a
                       style={{color: props.color, fontWeight: 'bold', textDecoration: 'none'}}
-                      href="https://example.com">About us</A>
+                      href="https://example.com">About us</a>
 
                     <EmptySpace height="10" />
-                  </TD>
-                </TR>
-              </TBody>
-            </Table>
-          </TD>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
 
-          <TD
+          <td
             height="1"
             width="20"
-            style={spaceStyle}>&nbsp;</TD>
-        </TR>
+            style={spaceStyle}>&nbsp;</td>
+        </tr>
 
-        <TR>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-          <TD><EmptySpace height="20" /></TD>
-        </TR>
-      </TBody>
-    </Table>
+        <tr>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+          <td><EmptySpace height="20" /></td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 

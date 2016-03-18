@@ -7,7 +7,14 @@ Render HTML emails on the server with React. Oy provides functionality to:
 - Validate props against [email best-practices](https://github.com/revivek/oy/tree/master/src/rules) with `Oy` components.
 - Render templates server-side with `Oy.renderTemplate`.
 
-[Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react)
+### Note: This is 1.0.0 release candidate code.
+
+Its most significant departure from pre-`1.0` is the switch from opt-in
+to opt-out validation. It significantly simplifies usage from not needing
+to implement custom Oy components, but note, this decision may be rolled
+back prior to `1.0.0` release.
+
+You can view [0.6.1 code here](https://github.com/revivek/oy/tree/2170994ed51efacbbb9364fa21e886058f022c2a).
 
 ## Installation
 
@@ -17,25 +24,22 @@ npm install --save oy-vey
 
 ## Example usage
 
-### Replace table markup with validating Oy components
+### Build low-level email template components
 
 ```js
 import React from 'react';
-import Oy from 'oy-vey';
-
-const {Table, TBody, TR, TD} = Oy;
 
 export default (props) => {
   return (
-    <Table width={props.maxWidth}>
-      <TBody>
-        <TR>
-          <TD align="center">
+    <table width={props.maxWidth}>
+      <tbody>
+        <tr>
+          <td align="center">
             {props.children}
-          </TD>
-        </TR>
-      </TBody>
-    </Table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 ```
@@ -44,7 +48,6 @@ export default (props) => {
 
 ```js
 import React from 'react';
-
 import MyLayout from './layout/MyLayout.jsx';
 import BodyText from './modules/BodyText.jsx';
 
@@ -86,19 +89,9 @@ server.listen(server.get('port'), () => {
 });
 ```
 
-## Default components
-
-The `Oy` namespace exposes the following components validated against email best practices: 
-
-```
-Table TBody TR TD Img A
-```
-
-If you want to circumvent this validation, you can use `Oy.Element` and pass the `tagName` prop to implement your own validated element. If you additionally don’t mind React stripping the attributes below, you can use React DOM `Element` objects (i.e. use `<table>` instead of `<Table>`).
-
 ## HTML attributes
 
-In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are supported on `Oy` components:
+In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are additionally supported:
 
 ```
 align background bgColor border vAlign
@@ -117,8 +110,6 @@ headCSS (string, optional) - CSS that belongs in `<head>`
 lang (string, optional) - ISO language code
 dir (string, optional) - Either 'ltr' or 'rtl'. 'ltr' is the default
 ```
-
-**Note about <= v0.5.0**: `bodyContent` in `options` is no longer supported to avoid the insertion of arbitrary HTML into the email body.
 
 ## Contributing
 

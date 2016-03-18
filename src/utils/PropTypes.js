@@ -4,7 +4,6 @@ const isString = (value) => {
 
 
 export default {
-  // TODO(patelvivek): I don't like how this is organized.
   rules: (ruleNames) => {
     return (props, propName, componentName) => {
       return ruleNames

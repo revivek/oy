@@ -7,18 +7,16 @@ import Body from './modules/Body.jsx';
 import Footer from './modules/Footer.jsx';
 
 
-export default React.createClass({
-  render: function() {
-    return (
-      <Layout>
-        <Header color="#134ac0" />
+export default () => {
+  return (
+    <Layout>
+      <Header color="#134ac0" />
 
-        <Body>
-          Hey there, hope you’re finding Oy useful!
-        </Body>
+      <Body>
+        Hey there, hope you’re finding Oy useful!
+      </Body>
 
-        <Footer color="#134ac0" />
-      </Layout>
-    );
-  }
-});
+      <Footer color="#134ac0" />
+    </Layout>
+  );
+};

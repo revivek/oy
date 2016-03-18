@@ -1,6 +1,5 @@
 import Oy from 'oy-vey';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 import express from 'express';
 
 import HelloWorldEmail from './HelloWorldEmail.jsx';

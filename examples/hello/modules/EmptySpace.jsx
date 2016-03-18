@@ -4,7 +4,6 @@
  */
 
 import React from 'react';
-import {Table, TBody, TR, TD} from 'oy-vey';
 
 
 const EmptySpace = (props) => {
@@ -15,17 +14,17 @@ const EmptySpace = (props) => {
   };
 
   return (
-    <Table width="100%">
-      <TBody>
-        <TR>
-          <TD
+    <table width="100%">
+      <tbody>
+        <tr>
+          <td
             width="100%"
             height={`${props.height}px`}
             style={style}
             dangerouslySetInnerHTML={{__html: '&nbsp;'}} />
-        </TR>
-      </TBody>
-    </Table>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 
