@@ -1,3 +1,7 @@
+## 0.6.1 (March 28, 2016)
+
+- Fix regression with `headCSS` option where it didn't appear in outputted template.
+
 ## 0.6.0 (March 16, 2016)
 
 - Migrate towards new API that consumes the top-level component directly.
