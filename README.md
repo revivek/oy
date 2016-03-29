@@ -24,7 +24,7 @@ npm install --save oy-vey
 
 ## Example usage
 
-### Build low-level email template components
+### Build low-level components with HTML email attributes
 
 ```js
 import React from 'react';
@@ -35,6 +35,10 @@ export default (props) => {
       <tbody>
         <tr>
           <td align="center">
+            {/*
+              align is deprecated and would normally be stripped
+              by React, but Oy lets us still use it! 
+            */}
             {props.children}
           </td>
         </tr>
