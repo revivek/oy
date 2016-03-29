@@ -12,5 +12,6 @@ export default {
     } else if (css.match(/<\/style>/i)) {
       throw new Error(`Unsafe CSS found in ${foundInName}: "<\/style>"`);
     }
+    return css;
   }
 };

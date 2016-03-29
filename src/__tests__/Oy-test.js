@@ -117,9 +117,11 @@ describe('Oy', function() {
     const rawHTML = Oy.renderTemplate(<Foo />, {
       title: 'A title',
       previewText: 'Some preview text.',
+      headCSS: '.foo { color: red; }'
     });
 
     expect(rawHTML).toContain('should be rendered');
+    expect(rawHTML).toContain('.foo{color:red}');
   });
 
   it('should escape the template options for the new renderTemplate structure', function() {
