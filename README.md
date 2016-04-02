@@ -16,6 +16,8 @@ back prior to `1.0.0` release.
 
 You can view [0.6.1 code here](https://github.com/revivek/oy/tree/2170994ed51efacbbb9364fa21e886058f022c2a).
 
+**Feedback request**: Try the [next](https://github.com/revivek/oy/tree/next) branch, which is slated for a 1.0.0-rc1 release. It aims to improve the library's usability. Open an issue with your feedback. Thanks!
+
 ## Installation
 
 ```
