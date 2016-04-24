@@ -26,5 +26,11 @@ describe('HrefAbsoluteURLRule', function() {
 
     const result8 = rule({href: 'http://www.example.com'});
     expect(result8 instanceof Error).toEqual(false);
+
+    const result9 = rule({href: 'mailto:foo@example.com'});
+    expect(result9 instanceof Error).toEqual(false);
+
+    const result10 = rule({href: 'tel:555-555-5555'});
+    expect(result10 instanceof Error).toEqual(false);
   });
 });
