@@ -7,7 +7,7 @@ Render HTML emails on the server with React. Oy provides functionality to:
 - Validate props against [email best-practices](https://github.com/revivek/oy/tree/master/src/rules) with `Oy` components.
 - Render templates server-side with `Oy.renderTemplate`.
 
-### Note: This is 1.0.0 release candidate code.
+### Note: This is 1.0.0 alpha code.
 
 Its most significant departure from pre-`1.0` is the switch from opt-in
 to opt-out validation. It significantly simplifies usage from not needing
