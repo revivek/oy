@@ -1,3 +1,12 @@
+## 1.0.0-rc (April 29, 2016)
+
+- Breaking changes:
+  - Default HTML element components like `Table`, `TBody`, `TR`, `TD`, `A`, `Img` no longer exist.
+  Instead, use the respective `ReactDOMComponent` versions. Oy will handle the necessary
+  transformations to ensure HTML4 attributes are preserved and validations are applied.
+  - Remove Oy.PropType, since Oy provides the necessary default validation.
+  - Upgrade to use React 15.0.1.
+
 ## 0.6.1 (March 28, 2016)
 
 - Fix regression with `headCSS` option where it didn't appear in outputted template.
