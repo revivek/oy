@@ -9,7 +9,7 @@ Render HTML emails on the server with React. Oy provides functionality to:
 
 [Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react)
 
-**Feedback request**: Try the [next](https://github.com/revivek/oy/tree/next) branch, which is slated for a 1.0.0-rc1 release. It aims to improve the library's usability. Open an issue with your feedback. Thanks!
+**Feedback request**: The [next](https://github.com/revivek/oy/tree/next) branch contains the 1.0.0-alpha release. It aims to improve the library's usability. Open an issue with your feedback. Thanks!
 
 ## Installation
 
