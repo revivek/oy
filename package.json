@@ -1,6 +1,6 @@
 {
   "name": "oy-vey",
-  "description": "React utilities for building server-side email templates.",
+  "description": "Render HTML emails on the server with React.",
   "version": "1.0.0-rc1",
   "keywords": [
     "react",
