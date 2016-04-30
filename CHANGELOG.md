@@ -1,4 +1,4 @@
-## 1.0.0-rc (April 29, 2016)
+## 1.0.0-alpha (April 29, 2016)
 
 - Breaking changes:
   - Default HTML element components like `Table`, `TBody`, `TR`, `TD`, `A`, `Img` no longer exist.
