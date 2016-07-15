@@ -1,3 +1,7 @@
+## 0.7.0 (July 14, 2016)
+
+- Bump React version to 15.1.0.
+
 ## 0.6.1 (March 28, 2016)
 
 - Fix regression with `headCSS` option where it didn't appear in outputted template.
