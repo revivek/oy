@@ -6,6 +6,8 @@ import objectAssign from 'object-assign';
 
 import EmptyTDRule from '../rules/EmptyTDRule';
 import HrefAbsoluteURLRule from '../rules/HrefAbsoluteURLRule';
+import ImgAltTextRule from '../rules/ImgAltTextRule';
+import ImgAltTextStyleRule from '../rules/ImgAltTextStyleRule';
 import ImgDimensionsRule from '../rules/ImgDimensionsRule';
 import ShorthandFontRule from '../rules/ShorthandFontRule';
 import SixCharacterHexBackgroundColorRule from '../rules/SixCharacterHexBackgroundColorRule';
@@ -75,7 +77,9 @@ Img.propTypes = {
   bgColor: SixCharacterHexBackgroundColorRule,
   height: ImgDimensionsRule,
   src: SrcAbsoluteURLRule,
-  width: ImgDimensionsRule
+  width: ImgDimensionsRule,
+  style: ImgAltTextStyleRule,
+  alt: ImgAltTextRule
 };
 
 // <a> element
