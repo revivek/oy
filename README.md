@@ -108,14 +108,14 @@ align background bgColor border vAlign
 
 ## Oy.renderTemplate API
 
-`Oy.renderTemplate(<Template />, templateOptions)`
+`Oy.renderTemplate(<Template />, templateOptions[, generateCustomTemplate])`
 
 The `templateOptions` parameter is an object with the following fields:
 
 ```
 title (string, required) - Used by clients if email is opened in a web page.
 previewText (string, required) - Short description that appears in email clients
-headCSS (string, optional) - CSS that belongs in `<head>`
+headCSS (string, optional) - CSS that belongs in `<head>`. Note, email clients may strip this out.
 lang (string, optional) - ISO language code
 dir (string, optional) - Either 'ltr' or 'rtl'. 'ltr' is the default
 ```
