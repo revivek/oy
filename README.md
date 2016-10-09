@@ -120,7 +120,7 @@ lang (string, optional) - ISO language code
 dir (string, optional) - Either 'ltr' or 'rtl'. 'ltr' is the default
 ```
 
-**Note about <= v0.5.0**: `bodyContent` in `options` is no longer supported to avoid the insertion of arbitrary HTML into the email body.
+The optional `generateCustomTemplate` is a function that takes `templateOptions` with an added property `bodyContent` as a single object parameter, and returns a string that should be the final email HTML sent to users. This can be used if the [default template](https://github.com/revivek/oy/blob/master/src/utils/HTML4.js) that Oy provides is inappropriate.
 
 ## Contributing
 
