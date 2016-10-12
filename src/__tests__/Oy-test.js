@@ -173,9 +173,10 @@ describe('Oy', function() {
       previewText: 'Baz qux'
     });
     expect(console.error).toHaveBeenCalledWith(
-      'Warning: Failed propType: Relative links can break (i.e. if ' +
+      'Warning: Failed prop type: Relative links can break (i.e. if ' +
       'recipients are outside the company network) and make your ' +
-      'content unavailable to view Check the render method of `FooA`.'
+      'content unavailable to view\n    in A (created by FooA)\n    ' +
+      'in FooA'
     );
   });
 });

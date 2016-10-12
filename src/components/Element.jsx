@@ -5,14 +5,14 @@ import OyProps from './OyProps';
 
 
 const Element = (props) => {
+  const tagName = props.tagName;
+  const propsCopy = {};
+  objectAssign(propsCopy, props);
+  delete propsCopy.tagName;
   return React.createElement(
-    props.tagName,
-    objectAssign(
-      {},
-      OyProps.convertToTransformableProps(props),
-      {tagName: null}
-    ),
-    props.children
+    tagName,
+    OyProps.convertToTransformableProps(propsCopy),
+    propsCopy.children
   );
 };
 
