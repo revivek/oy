@@ -24,24 +24,9 @@ const renderTemplateSafe = (element, options, generateCustomTemplate) => {
 };
 
 
-const renderTemplateUnsafe = (options, generateCustomTemplate) => {
-  console.warn(
-    'Accepting bodyContent as an option is deprecated and will be removed ' +
-    'in the next minor release. Instead, pass the top-level ReactElement ' +
-    'as the first parameter, i.e. Oy.renderTemplate(<Template />, options)'
-  );
-  return generateCustomTemplate ? (
-    generateCustomTemplate(options)
-  ) : HTML4.generateDefaultTemplate(options);
-};
-
-
 export default {
   renderTemplate: (...args) => {
-    const rawHTML = React.isValidElement(args[0]) ? (
-      renderTemplateSafe(...args)
-    ) : renderTemplateUnsafe(...args);
-
+    const rawHTML = renderTemplateSafe(...args);
     const html = HTML4.replaceWhitelistedAttributes(rawHTML);
     const bytes = Buffer.byteLength(html, 'utf8');
 
