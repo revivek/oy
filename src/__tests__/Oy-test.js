@@ -37,17 +37,15 @@ describe('Oy', function() {
 
   it('should use provided base template generator by default', function() {
     const shouldThrow = () => {
-      Oy.renderTemplate({
-        title: 'Foo bar',
-        bodyContent: '<h1>Testing</h1>'
+      Oy.renderTemplate(<h1>Testing</h1>, {
+        title: 'Foo bar'
       });
     };
 
     expect(shouldThrow).toThrow();
 
-    const rawHTML = Oy.renderTemplate({
+    const rawHTML = Oy.renderTemplate(<h1>Testing</h1>, {
       title: 'Foo bar',
-      bodyContent: '<h1>Testing</h1>',
       previewText: 'Baz qux',
       headCSS: '.foo { color: red; }'
     });
@@ -55,7 +53,7 @@ describe('Oy', function() {
     expect(rawHTML).toContain('<title>Foo bar</title>');
     expect(rawHTML).toContain('Baz qux');
     expect(rawHTML).toContain('<h1>Testing</h1>');
-    expect(rawHTML).toContain('.foo { color: red; }');
+    expect(rawHTML).toContain('.foo{color:red}');
   });
 
   it('should use custom base template generator', function() {
@@ -63,24 +61,22 @@ describe('Oy', function() {
       return '<h1>Testing 123</h1>';
     };
 
-    const rawHTML = Oy.renderTemplate({}, generateCustomTemplate);
+    const rawHTML = Oy.renderTemplate(<h1>test</h1>, {}, generateCustomTemplate);
     expect(rawHTML).toEqual('<h1>Testing 123</h1>');
   });
 
   it('should warn on outputs larger than 100KB', function() {
     console.warn = jasmine.createSpy('log');
-    const rawHTML = Oy.renderTemplate({
+    const rawHTML = Oy.renderTemplate(<p>{Array(1024 * 101).join('.')}</p>, {
       title: 'Foo bar',
-      bodyContent: Array(1024 * 101).join('.'),
       previewText: 'Baz qux'
     });
     expect(console.warn).toHaveBeenCalled();
   });
 
   it('should set default dir attribute when generating default template', function() {
-    const rawHTML = Oy.renderTemplate({
+    const rawHTML = Oy.renderTemplate(<h1>Testing</h1>, {
       title: 'Foo bar',
-      bodyContent: '<h1>Testing</h1>',
       previewText: 'Baz qux'
     });
 
@@ -89,9 +85,8 @@ describe('Oy', function() {
   });
 
   it('should set overriding dir attribute when generating default template', function() {
-    const rawHTML = Oy.renderTemplate({
+    const rawHTML = Oy.renderTemplate(<h1>Testing</h1>, {
       title: 'Foo bar',
-      bodyContent: '<h1>Testing</h1>',
       previewText: 'Baz qux',
       dir: 'rtl'
     });
@@ -101,9 +96,8 @@ describe('Oy', function() {
   });
 
   it('should set lang attribute when generating default template', function() {
-    const rawHTML = Oy.renderTemplate({
+    const rawHTML = Oy.renderTemplate(<h1>Testing</h1>, {
       title: 'Foo bar',
-      bodyContent: '<h1>Testing</h1>',
       previewText: 'Baz qux',
       lang: 'fr'
     });

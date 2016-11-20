@@ -8,7 +8,7 @@ import HTML4 from './HTML4';
 import CSS from './CSS';
 
 
-const renderTemplateSafe = (element, options, generateCustomTemplate) => {
+const renderTemplate = (element, options, generateCustomTemplate) => {
   const bodyContent = ReactDOMServer.renderToStaticMarkup(element);
   const minifiedHeadCSS = new CleanCSS().minify(options.headCSS).styles;
   options = objectAssign({}, {
@@ -26,7 +26,7 @@ const renderTemplateSafe = (element, options, generateCustomTemplate) => {
 
 export default {
   renderTemplate: (...args) => {
-    const rawHTML = renderTemplateSafe(...args);
+    const rawHTML = renderTemplate(...args);
     const html = HTML4.replaceWhitelistedAttributes(rawHTML);
     const bytes = Buffer.byteLength(html, 'utf8');
 
