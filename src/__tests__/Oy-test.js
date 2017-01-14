@@ -12,9 +12,22 @@ describe('Oy', function() {
 
   it('should expose PropTypes, Element, and renderTemplate', function() {
     expect(Oy.PropTypes).toBeDefined();
-    expect(Oy.PropTypes.rules).toBeDefined();
     expect(Oy.Element).toBeDefined();
     expect(Oy.renderTemplate).toBeDefined();
+  });
+
+  it('should expose PropTypes validation rules', function() {
+    expect(Oy.PropTypes.EmptyTDRule).toBeDefined();
+    expect(Oy.PropTypes.HrefAbsoluteURLRule).toBeDefined();
+    expect(Oy.PropTypes.ImgAltTextRule).toBeDefined();
+    expect(Oy.PropTypes.ImgAltTextStyleRule).toBeDefined();
+    expect(Oy.PropTypes.ImgDimensionsRule).toBeDefined();
+    expect(Oy.PropTypes.ShorthandFontRule).toBeDefined();
+    expect(Oy.PropTypes.SixCharacterHexBackgroundColorRule).toBeDefined();
+    expect(Oy.PropTypes.SrcAbsoluteURLRule).toBeDefined();
+    expect(Oy.PropTypes.TableBorderRule).toBeDefined();
+    expect(Oy.PropTypes.TableCellPaddingRule).toBeDefined();
+    expect(Oy.PropTypes.TableCellSpacingRule).toBeDefined();
   });
 
   it('should expose Table, TBody, TR, TD, Img, and A', function() {

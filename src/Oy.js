@@ -1,6 +1,6 @@
 import DefaultElement from './components/DefaultElement';
 import Element from './components/Element';
-import PropTypes from './utils/PropTypes';
+import * as PropTypes from './rules';
 import Renderer from './utils/Renderer';
 
 
