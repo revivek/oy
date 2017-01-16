@@ -7,7 +7,7 @@ const description = 'Relative src URLs can break (i.e. if recipients are outside
 
 export default (props) => {
   if (props.hasOwnProperty('src')) {
-    if (!/^(http|https):\/\//.test(props['src'])) {
+    if (!/^https?:\/\//.test(props['src'])) {
       return new Error(description);
     }
   }

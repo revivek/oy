@@ -1,3 +1,4 @@
+export { default as BackgroundAbsoluteURLRule } from './BackgroundAbsoluteURLRule';
 export { default as EmptyTDRule } from './EmptyTDRule';
 export { default as HrefAbsoluteURLRule } from './HrefAbsoluteURLRule';
 export { default as ImgAltTextRule } from './ImgAltTextRule';
