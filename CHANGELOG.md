@@ -1,4 +1,4 @@
-## 0.8.0 (January 17, 2017)
+## 0.8.0 (TK)
 
 - Bump React version to 15.4.0.
 - Deprecate the unsafe bodyContent option in `Oy.renderTemplate`.
