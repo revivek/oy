@@ -1,3 +1,9 @@
+## 0.8.0 (January 17, 2017)
+
+- Bump React version to 15.4.0.
+- Deprecate the unsafe bodyContent option in `Oy.renderTemplate`.
+- Expose rules on `Oy.PropTypes.*` (@rendez), for use in custom component propType validation.
+
 ## 0.7.0 (July 14, 2016)
 
 - Bump React version to 15.1.0.
