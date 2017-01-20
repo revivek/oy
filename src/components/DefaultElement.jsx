@@ -4,6 +4,7 @@
 
 import objectAssign from 'object-assign';
 
+import BackgroundAbsoluteURLRule from '../rules/BackgroundAbsoluteURLRule';
 import EmptyTDRule from '../rules/EmptyTDRule';
 import HrefAbsoluteURLRule from '../rules/HrefAbsoluteURLRule';
 import ImgAltTextRule from '../rules/ImgAltTextRule';
@@ -25,6 +26,7 @@ const Table = (props) => {
 };
 
 Table.propTypes = {
+  background: BackgroundAbsoluteURLRule,
   bgColor: SixCharacterHexBackgroundColorRule,
   border: TableBorderRule,
   cellPadding: TableCellPaddingRule,
@@ -63,6 +65,7 @@ const TD = (props) => {
 };
 
 TD.propTypes = {
+  background: BackgroundAbsoluteURLRule,
   bgColor: SixCharacterHexBackgroundColorRule,
   children: EmptyTDRule,
   style: ShorthandFontRule
