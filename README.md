@@ -124,6 +124,7 @@ If Oy's [default template](https://github.com/revivek/oy/blob/master/src/utils/H
 
 It takes in props from `templateOptions`, but has an added prop `bodyContent` as a single object parameter. This `generateCustomTemplate` function returns a string that should be the final email HTML sent to users. 
 
+<details>
 ##### Using generateCustomTemplate:
 
 ```js
@@ -151,7 +152,7 @@ const generateCustomTemplate = (props) => {
   `
 };
 ```
-
+</details>
 
 ## Contributing
 
