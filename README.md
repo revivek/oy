@@ -118,7 +118,30 @@ lang (string, optional) - ISO language code
 dir (string, optional) - Either 'ltr' or 'rtl'. 'ltr' is the default
 ```
 
-The optional `generateCustomTemplate` is a function that takes `templateOptions` with an added property `bodyContent` as a single object parameter, and returns a string that should be the final email HTML sent to users. This can be used if the [default template](https://github.com/revivek/oy/blob/master/src/utils/HTML4.js) that Oy provides is inappropriate.
+### Using a Custom Template
+
+If Oy's [default template](https://github.com/revivek/oy/blob/master/src/utils/HTML4.js) doesn't work for you, you can make your own. `generateCustomTemplate` takes in `templateOptions` with an additional property `bodyContent`, which is the rendered body HTML to be inserted into your template. It then returns a string that should be the final email HTML sent to users.
+
+```js
+const generateCustomTemplate = (templateOptions) => {
+  return `
+    <!doctype html>
+    <html>
+      <head>
+        <title>${templateOptions.title}</title>
+      </head>
+      <body>
+        ${templateOptions.bodyContent}
+      </body>
+    </html>
+  `
+};
+
+const template = Oy.renderTemplate(<GettingStartedEmail />, {
+  title: 'Getting Started with Foo'
+}, (templateOptions) => generateCustomTemplate(templateOptions));
+```
+
 
 ## Contributing
 
