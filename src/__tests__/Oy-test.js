@@ -159,17 +159,9 @@ describe('Oy', function() {
         headCSS: 'body{xss:expr/*XSS*/ession(alert("XSS"))}'
       });
     };
-    const shouldThrowBecauseOfClosingStyleTag = () => {
-      Oy.renderTemplate(<Foo />, {
-        title: 'foo',
-        previewText: 'bar',
-        headCSS: '</style>'
-      });
-    };
 
     expect(shouldThrowBecauseOfMozBinding).toThrow();
     expect(shouldThrowBecauseOfExpression).toThrow();
-    expect(shouldThrowBecauseOfClosingStyleTag).toThrow();
   });
 
   it('should raise warning on basic validation error', function() {

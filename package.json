@@ -14,7 +14,7 @@
     "url": "https://github.com/oysterbooks/oy"
   },
   "dependencies": {
-    "clean-css": "^3.4.10",
+    "clean-css": "^4.0.12",
     "object-assign": "^4.0.1",
     "sanitizer": "^0.1.3"
   },
