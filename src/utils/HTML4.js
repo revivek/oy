@@ -32,6 +32,7 @@ export default {
       bodyContent,
       previewText,
       headCSS = '',
+      bgColor = '#FFFFFF',
       lang,
       dir = 'ltr' /* https://www.w3.org/TR/html4/struct/dirlang.html#blocklevel-bidi */}) => {
     if (!title) {
@@ -76,11 +77,11 @@ export default {
             </xml>
           <![endif]-->
         </head>
-        <body bgcolor="#FFFFFF" width="100%" style="-webkit-font-smoothing: antialiased; width:100% !important; background:#FFFFFF;-webkit-text-size-adjust:none; margin:0; padding:0; min-width:100%; direction: ${dir};">
-          <table bgcolor="#FFFFFF" id="__bodyTable__" width="100%" style="-webkit-font-smoothing: antialiased; width:100% !important; background:#FFFFFF;-webkit-text-size-adjust:none; margin:0; padding:0; min-width:100%">
+        <body bgcolor="${bgColor}" width="100%" style="-webkit-font-smoothing: antialiased; width:100% !important; background:${bgColor};-webkit-text-size-adjust:none; margin:0; padding:0; min-width:100%; direction: ${dir};">
+          <table bgcolor="${bgColor}" id="__bodyTable__" width="100%" style="-webkit-font-smoothing: antialiased; width:100% !important; background:${bgColor};-webkit-text-size-adjust:none; margin:0; padding:0; min-width:100%">
             <tr>
               <td align="center">
-                <span style="display: none !important; color: #FFFFFF; margin:0; padding:0; font-size:1px; line-height:1px;">${previewText}</span>
+                <span style="display: none !important; color: ${bgColor}; margin:0; padding:0; font-size:1px; line-height:1px;">${previewText}</span>
                 ${bodyContent}
               </td>
             </tr>
@@ -90,4 +91,3 @@ export default {
     `;
   }
 };
-
