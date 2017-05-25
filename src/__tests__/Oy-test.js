@@ -60,13 +60,15 @@ describe('Oy', function() {
     const rawHTML = Oy.renderTemplate(<h1>Testing</h1>, {
       title: 'Foo bar',
       previewText: 'Baz qux',
-      headCSS: '.foo { color: red; }'
+      headCSS: '.foo { color: red; }',
+      bgColor: '#FF0000'
     });
 
     expect(rawHTML).toContain('<title>Foo bar</title>');
     expect(rawHTML).toContain('Baz qux');
     expect(rawHTML).toContain('<h1>Testing</h1>');
     expect(rawHTML).toContain('.foo{color:red}');
+    expect(rawHTML).toContain('bgcolor="#FF0000"')
   });
 
   it('should use custom base template generator', function() {

@@ -16,7 +16,8 @@ const renderTemplate = (element, options, generateCustomTemplate) => {
     dir: sanitizer.escape(options.dir),
     title: sanitizer.escape(options.title),
     previewText: sanitizer.escape(options.previewText),
-    headCSS: CSS.raiseOnUnsafeCSS(minifiedHeadCSS, 'headCSS')
+    headCSS: CSS.raiseOnUnsafeCSS(minifiedHeadCSS, 'headCSS'),
+    bgColor: sanitizer.escape(options.bgColor)
   }, {bodyContent: bodyContent});
   return generateCustomTemplate ? (
     generateCustomTemplate(options)
