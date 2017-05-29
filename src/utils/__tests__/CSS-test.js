@@ -13,14 +13,8 @@ describe('CSS', function() {
         'body{xss:expr/*XSS*/ession(alert("XSS"))}'
       );
     };
-    const shouldThrowBecauseOfClosingStyleTag = () => {
-      CSS.raiseOnUnsafeCSS(
-        '</style>'
-      );
-    };
 
     expect(shouldThrowBecauseOfMozBinding).toThrow();
     expect(shouldThrowBecauseOfExpression).toThrow();
-    expect(shouldThrowBecauseOfClosingStyleTag).toThrow();
   });
 });
