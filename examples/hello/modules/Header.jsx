@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Table, TBody, TD, TR} from 'oy-vey';
 
 import EmptySpace from './EmptySpace.jsx';
@@ -42,7 +43,7 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  color: React.PropTypes.string.isRequired
+  color: PropTypes.string.isRequired
 };
 
 
