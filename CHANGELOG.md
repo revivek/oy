@@ -1,3 +1,9 @@
+## 0.9.0 (June 15, 2017)
+
+- Add `bgColor` option to default template (@hlynurf).
+- Fix prop-types deprecation (@Rauttis).
+- Update clean-css to 4.x (@weaintplastic).
+
 ## 0.8.0 (January 19, 2017)
 
 - Bump React version to 15.4.0.
