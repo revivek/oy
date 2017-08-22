@@ -27,3 +27,6 @@ export const TD = DefaultElement.TD;
 export const TR = DefaultElement.TR;
 export const Img = DefaultElement.Img;
 export const A = DefaultElement.A;
+
+// This is a workaround in the Babel add-module-exports plugin
+module.exports = exports['default'];
