@@ -1,40 +1,12 @@
-const supportedPropsToTransformableAttributes = {
-  align: 'align',
-  background: 'background',
-  bgColor: 'bgcolor',
-  border: 'border',
-  vAlign: 'valign'
-};
-
 export default {
-  supportedPropsToTransformableAttributes:
-    supportedPropsToTransformableAttributes,
-
-  replaceWhitelistedAttributes: (html) => {
-    return Object.keys(supportedPropsToTransformableAttributes)
-      .map((supportedProp) => {
-        const supportedAttribute = (
-          supportedPropsToTransformableAttributes[supportedProp]
-        );
-
-        return {
-          regex: new RegExp(`data-oy-${supportedAttribute}`, 'g'),
-          replacement: supportedAttribute
-        };
-      })
-      .reduce((previousHTML, attribute) => {
-        return previousHTML.replace(attribute.regex, attribute.replacement)
-      }, html);
-  },
-
   generateDefaultTemplate: ({
-      title,
-      bodyContent,
-      previewText,
-      headCSS = '',
-      bgColor = '#FFFFFF',
-      lang,
-      dir = 'ltr' /* https://www.w3.org/TR/html4/struct/dirlang.html#blocklevel-bidi */}) => {
+    title,
+    bodyContent,
+    previewText,
+    headCSS = '',
+    bgColor = '#FFFFFF',
+    lang,
+    dir = 'ltr' /* https://www.w3.org/TR/html4/struct/dirlang.html#blocklevel-bidi */}) => {
     if (!title) {
       throw new Error('`title` is a required option for `renderTemplate`');
     } else if (!bodyContent) {

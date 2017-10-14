@@ -1,3 +1,9 @@
+## 0.10.0 (October 15, 2017)
+
+- Bump React version to 16.
+- On validated components, `vAlign` is now `valign` and `bgColor` is now `bgcolor`.
+- Remove `Element` component, since React 16 makes it now a no-op.
+
 ## 0.9.0 (June 15, 2017)
 
 - Add `bgColor` option to default template (@hlynurf).

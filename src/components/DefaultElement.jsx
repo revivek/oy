@@ -2,7 +2,7 @@
  * Provides default Oy.Element components with rules.
  */
 
-import objectAssign from 'object-assign';
+import React from 'react';
 
 import BackgroundAbsoluteURLRule from '../rules/BackgroundAbsoluteURLRule';
 import EmptyTDRule from '../rules/EmptyTDRule';
@@ -17,12 +17,9 @@ import TableBorderRule from '../rules/TableBorderRule';
 import TableCellPaddingRule from '../rules/TableCellPaddingRule';
 import TableCellSpacingRule from '../rules/TableCellSpacingRule';
 
-import Element from './Element';
-
-
 // <table> element
 const Table = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'table'}));
+  return React.createElement('table', props, props.children);
 };
 
 Table.propTypes = {
@@ -42,7 +39,7 @@ Table.defaultProps = {
 
 // <tbody> element
 const TBody = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'tbody'}));
+  return React.createElement('tbody', props, props.children);
 };
 
 TBody.propTypes = {
@@ -51,7 +48,7 @@ TBody.propTypes = {
 
 // <tr> element
 const TR = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'tr'}));
+  return React.createElement('tr', props, props.children);
 };
 
 TR.propTypes = {
@@ -61,7 +58,7 @@ TR.propTypes = {
 
 // <td> element
 const TD = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'td'}));
+  return React.createElement('td', props, props.children);
 };
 
 TD.propTypes = {
@@ -73,7 +70,7 @@ TD.propTypes = {
 
 // <img> element
 const Img = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'img'}));
+  return React.createElement('img', props, props.children);
 };
 
 Img.propTypes = {
@@ -87,7 +84,7 @@ Img.propTypes = {
 
 // <a> element
 const A = (props) => {
-  return Element(objectAssign({}, props, {tagName: 'a'}));
+  return React.createElement('a', props, props.children);
 };
 
 A.propTypes = {

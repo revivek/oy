@@ -1,12 +1,10 @@
 import DefaultElement from './components/DefaultElement';
-import Element from './components/Element';
 import * as PropTypes from './rules';
 import Renderer from './utils/Renderer';
 
 
 export default {
   // React Components
-  Element: Element,
   Table: DefaultElement.Table,
   TBody: DefaultElement.TBody,
   TD: DefaultElement.TD,

@@ -27,8 +27,7 @@ const renderTemplate = (element, options, generateCustomTemplate) => {
 
 export default {
   renderTemplate: (...args) => {
-    const rawHTML = renderTemplate(...args);
-    const html = HTML4.replaceWhitelistedAttributes(rawHTML);
+    const html = renderTemplate(...args);
     const bytes = Buffer.byteLength(html, 'utf8');
 
     if (bytes > 1024 * 100) {

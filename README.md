@@ -94,15 +94,15 @@ The `Oy` namespace exposes the following components validated against email best
 Table TBody TR TD Img A
 ```
 
-If you want to circumvent this validation, you can use `Oy.Element` and pass the `tagName` prop to implement your own validated element. If you additionally don’t mind React stripping the attributes below, you can use React DOM `Element` objects (i.e. use `<table>` instead of `<Table>`).
-
 ## HTML attributes
 
-In addition to the [attributes supported by React](https://facebook.github.io/react/docs/tags-and-attributes.html#html-attributes), these HTML attributes are supported on `Oy` components:
+As of React 16, React will not strip non-standard HTML attributes. That means you can use all the attributes typically required for email templates:
 
 ```
-align background bgColor border vAlign
+align background bgcolor border valign
 ```
+
+For those migrating from previous Oy versions, note that `bgColor` is now `bgcolor` and `vAlign` is `valign`.
 
 ## Oy.renderTemplate API
 

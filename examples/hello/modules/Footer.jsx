@@ -42,7 +42,7 @@ const Footer = (props) => {
                 <TR>
                   <TD
                     align="center"
-                    bgColor="#EEEEEE"
+                    bgcolor="#EEEEEE"
                     style={{fontFamily: 'Arial'}}>
 
                     <EmptySpace height="10" />
@@ -69,7 +69,7 @@ const Footer = (props) => {
                 <TR>
                   <TD
                     align="center"
-                    bgColor="#EEEEEE"
+                    bgcolor="#EEEEEE"
                     style={{fontFamily: 'Arial'}}>
 
                     <EmptySpace height="10" />

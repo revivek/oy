@@ -10,9 +10,8 @@ describe('Oy', function() {
     console.warn = () => { /* no-op by default */ };
   });
 
-  it('should expose PropTypes, Element, and renderTemplate', function() {
+  it('should expose PropTypes and renderTemplate', function() {
     expect(Oy.PropTypes).toBeDefined();
-    expect(Oy.Element).toBeDefined();
     expect(Oy.renderTemplate).toBeDefined();
   });
 
@@ -39,7 +38,7 @@ describe('Oy', function() {
     expect(Oy.A).toBeDefined();
   });
 
-  it('should additionally export named default Element components', function() {
+  it('should additionally export components directly', function() {
     expect(Table).toBeDefined();
     expect(TBody).toBeDefined();
     expect(TR).toBeDefined();
@@ -176,8 +175,7 @@ describe('Oy', function() {
     expect(console.error).toHaveBeenCalledWith(
       'Warning: Failed prop type: Relative links can break (i.e. if ' +
       'recipients are outside the company network) and make your ' +
-      'content unavailable to view\n    in A (created by FooA)\n    ' +
-      'in FooA'
+      'content unavailable to view\n    in A\n    in FooA'
     );
   });
 });

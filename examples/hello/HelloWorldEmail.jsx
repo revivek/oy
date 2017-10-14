@@ -7,8 +7,8 @@ import Body from './modules/Body.jsx';
 import Footer from './modules/Footer.jsx';
 
 
-export default React.createClass({
-  render: function() {
+export class HelloWorldEmail extends React.Component {
+  render() {
     return (
       <Layout>
         <Header color="#134ac0" />
@@ -21,4 +21,4 @@ export default React.createClass({
       </Layout>
     );
   }
-});
+}
