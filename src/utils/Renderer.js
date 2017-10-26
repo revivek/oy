@@ -1,6 +1,6 @@
 import CleanCSS from 'clean-css';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server.browser';
 import objectAssign from 'object-assign';
 import sanitizer from 'sanitizer';
 
