@@ -9,6 +9,7 @@
   "author": "Vivek Patel <patelvivek@google.com>",
   "bugs": "https://github.com/oysterbooks/oy/issues",
   "main": "lib/Oy.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/oysterbooks/oy"
