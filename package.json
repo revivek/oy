@@ -2,13 +2,11 @@
   "name": "oy-vey",
   "description": "React utilities for building server-side email templates.",
   "version": "0.10.0",
-  "keywords": [
-    "react",
-    "email"
-  ],
+  "keywords": ["react", "email"],
   "author": "Vivek Patel <patelvivek@google.com>",
   "bugs": "https://github.com/oysterbooks/oy/issues",
   "main": "lib/Oy.js",
+  "types": "./index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
