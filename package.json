@@ -1,7 +1,7 @@
 {
   "name": "oy-vey",
   "description": "React utilities for building server-side email templates.",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "keywords": ["react", "email"],
   "author": "Vivek Patel <patelvivek@google.com>",
   "bugs": "https://github.com/oysterbooks/oy/issues",
