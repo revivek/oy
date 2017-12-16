@@ -1,3 +1,8 @@
+## 0.11.0 (December 16, 2017)
+
+- Add TypeScript typings (@sampsonjoliver).
+- Support for rendering in the browser (@ccorcos).
+
 ## 0.10.0 (October 15, 2017)
 
 - Bump React version to 16.
