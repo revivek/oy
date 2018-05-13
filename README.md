@@ -9,6 +9,8 @@ Render HTML emails on the server with React. Oy provides functionality to:
 
 [Blog Post](http://oyster.engineering/post/124868558323/emails-oy-vey-render-emails-with-react) - [ReactConf 2016 talk](https://www.youtube.com/watch?v=KNGj8Y0J01Q)
 
+NOTE: If using TypeScript, the current typings result in quickly growing compilation times. I would suggest not using TypeScript with Oy until [the bug is addressed](https://github.com/revivek/oy/issues/84). If TypeScript is a requirement, [see a workaround](https://github.com/revivek/oy/issues/84#issuecomment-374994906) that disables a subset of type-checks.
+
 ## Installation
 
 ```
