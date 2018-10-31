@@ -32,7 +32,7 @@ declare namespace Oy {
   interface OyElementAttributes {
     width?: number | string;
     height?: number | string;
-    align?: string;
+    align?: 'left' | 'center' | 'right' | 'justify' | 'char';
     background?: string;
     bgcolor?: string;
     border?: number | string;
