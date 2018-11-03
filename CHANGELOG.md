@@ -1,3 +1,7 @@
+## 0.11.1 (November 2, 2018)
+
+- Fix types to be compatible with @types/react@16.4.18 (aldendaniels).
+
 ## 0.11.0 (December 16, 2017)
 
 - Add TypeScript typings (@sampsonjoliver).
