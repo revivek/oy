@@ -36,7 +36,7 @@ declare namespace Oy {
     background?: string;
     bgcolor?: string;
     border?: number | string;
-    valign?: string;
+    valign?: 'top' | 'middle' | 'bottom' | 'baseline';
   }
 
   interface OyTBodyElementAttributes
