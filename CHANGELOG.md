@@ -1,3 +1,7 @@
+## 0.11.2 (November 5, 2019)
+
+- Update OyElementAttributes TS type to match React type (swac).
+
 ## 0.11.1 (November 2, 2018)
 
 - Fix types to be compatible with @types/react@16.4.18 (aldendaniels).
