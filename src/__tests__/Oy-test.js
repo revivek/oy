@@ -173,9 +173,10 @@ describe('Oy', function() {
       previewText: 'Baz qux'
     });
     expect(console.error).toHaveBeenCalledWith(
-      'Warning: Failed prop type: Relative links can break (i.e. if ' +
-      'recipients are outside the company network) and make your ' +
-      'content unavailable to view\n    in A\n    in FooA'
+      'Warning: Failed %s type: %s%s',
+      'prop',
+      'Relative links can break (i.e. if recipients are outside the company network) and make your content unavailable to view',
+      jasmine.any(String)
     );
   });
 });
