@@ -35,7 +35,7 @@ declare namespace Oy {
     align?: 'left' | 'center' | 'right' | 'justify' | 'char';
     background?: string;
     bgcolor?: string;
-    border?: number | string;
+    border?: number;
     valign?: 'top' | 'middle' | 'bottom' | 'baseline';
   }
 
