@@ -1,3 +1,8 @@
+## 0.12.0 (August 27, 2022)
+
+- Upgrade to React 17 (mtjoe3)
+- Update types to match latest React types (alden-codaio)
+
 ## 0.11.2 (November 5, 2019)
 
 - Update OyElementAttributes TS type to match React type (swac).
