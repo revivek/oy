@@ -1,7 +1,7 @@
 {
   "name": "oy-vey",
   "description": "React utilities for building server-side email templates.",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "keywords": [
     "react",
     "email"

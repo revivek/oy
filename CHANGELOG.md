@@ -1,3 +1,7 @@
+## 0.12.1 (January 21, 2023)
+
+- Add React 18 as optional peer dependency (amsardesai)
+
 ## 0.12.0 (August 27, 2022)
 
 - Upgrade to React 17 (mtjoe3)
